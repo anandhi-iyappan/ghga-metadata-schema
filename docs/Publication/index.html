@@ -359,7 +359,7 @@
                 <h1 id="class-publication">Class: publication<a class="headerlink" href="#class-publication" title="Permanent link">&para;</a></h1>
 <p>The Publication entity represents a publication. While a publication can be any article that is published, the minimum expectation is that the publication has a valid DOI.</p>
 <p>URI: <a href="https://w3id.org/GHGA/Publication">GHGA:Publication</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Dataset]-%20has%20publication%200..*&gt;[Publication&#124;title:string%20%3F;id:string;xref:string%20*;accession(i):string%20%3F;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Investigation]-%20has%20publication%200..1&gt;[Publication],[ResearchActivity]-%20has%20publication%200..1&gt;[Publication],[Dataset]-%20has%20publication(i)%200..1&gt;[Publication],[Project]-%20has%20publication%200..*&gt;[Publication],[Study]-%20has%20publication%200..*&gt;[Publication],[InformationContentEntity]^-[Publication],[ResearchActivity],[Project],[Investigation],[InformationContentEntity],[Dataset],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Dataset]-%20has%20publication%200..*&gt;[Publication&#124;title:string%20%3F;id:string;xref:string%20*;accession(i):string%20%3F;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Investigation]-%20has%20publication%200..1&gt;[Publication],[ResearchActivity]-%20has%20publication%200..1&gt;[Publication],[Dataset]-%20has%20publication(i)%200..1&gt;[Publication],[Project]-%20has%20publication%200..*&gt;[Publication],[Study]-%20has%20publication%200..*&gt;[Publication],[InformationContentEntity]^-[Publication],[ResearchActivity],[Project],[Investigation],[InformationContentEntity],[Dataset],[Attribute]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Dataset]++-%20has%20publication%200..*&gt;[Publication&#124;title:string%20%3F;abstract:string%20%3F;id:string;xref:string%20*;accession(i):string%20%3F;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Investigation]-%20has%20publication%200..1&gt;[Publication],[ResearchActivity]-%20has%20publication%200..1&gt;[Publication],[Dataset]-%20has%20publication(i)%200..1&gt;[Publication],[Project]++-%20has%20publication%200..*&gt;[Publication],[Study]++-%20has%20publication%200..*&gt;[Publication],[InformationContentEntity]^-[Publication],[ResearchActivity],[Project],[NamedThing],[Investigation],[InformationContentEntity],[Dataset],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Dataset]++-%20has%20publication%200..*&gt;[Publication&#124;title:string%20%3F;abstract:string%20%3F;id:string;xref:string%20*;accession(i):string%20%3F;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Investigation]-%20has%20publication%200..1&gt;[Publication],[ResearchActivity]-%20has%20publication%200..1&gt;[Publication],[Dataset]-%20has%20publication(i)%200..1&gt;[Publication],[Project]++-%20has%20publication%200..*&gt;[Publication],[Study]++-%20has%20publication%200..*&gt;[Publication],[InformationContentEntity]^-[Publication],[ResearchActivity],[Project],[NamedThing],[Investigation],[InformationContentEntity],[Dataset],[Attribute]" /></a></p>
 <h2 id="parents">Parents<a class="headerlink" href="#parents" title="Permanent link">&para;</a></h2>
 <ul>
 <li>is_a: <a href="../InformationContentEntity/">InformationContentEntity</a> - A generically dependent continuant that is about some thing.</li>
@@ -376,6 +376,11 @@
 <ul>
 <li><a href="../publication_title/">publication➞title</a>  <sub>0..1</sub><ul>
 <li>Description: The title for the Publication.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../abstract/">abstract</a>  <sub>0..1</sub><ul>
+<li>Description: The study abstract that describes the goals.  Can also hold abstract from a publication related to this study</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
@@ -415,6 +420,16 @@
 <li><a href="../named_thing_update_date/">named thing➞update date</a>  <sub>0..1</sub><ul>
 <li>Description: Timestamp (in ISO 8601 format) when the entity was updated.</li>
 <li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../replaces/">replaces</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to a deprecated entity that is being replaced by the current entity.</li>
+<li>Range: <a href="../NamedThing/">NamedThing</a></li>
+</ul>
+</li>
+<li><a href="../replaced_by/">replaced by</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to the entity which replaces a currently deprecated entity.</li>
+<li>Range: <a href="../NamedThing/">NamedThing</a></li>
 </ul>
 </li>
 </ul>

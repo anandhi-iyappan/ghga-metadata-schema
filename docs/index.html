@@ -482,7 +482,11 @@
 </ul>
 </li>
 <li><a href="File/">File</a></li>
-<li><a href="Protocol/">Protocol</a> - A plan specification which has sufficient level of detail and quantitative information to communicate it between investigation agents, so that different investigation agents will reliably be able to independently reproduce the process.</li>
+<li><a href="Protocol/">Protocol</a> - A plan specification which has sufficient level of detail and quantitative information to communicate it between investigation agents, so that different investigation agents will reliably be able to independently reproduce the process.<ul>
+<li><a href="LibraryPreparationProtocol/">LibraryPreparationProtocol</a> - Information about the library preparation of an Experiment.</li>
+<li><a href="SequencingProtocol/">SequencingProtocol</a> - Information about the sequencing of a sample.</li>
+</ul>
+</li>
 <li><a href="Publication/">Publication</a> - The Publication entity represents a publication. While a publication can be any article that is published, the minimum expectation is that the publication has a valid DOI.</li>
 <li><a href="Technology/">Technology</a> - A Technology is an abstraction that represents the instrument used for an assay. The Technology entity captures instrument-specific attributes that are relevant for an Experiment entity. The Technology entity may be further characterized by its children where each child has fields that are relevant to that particular technology.</li>
 <li><a href="Workflow/">Workflow</a> - A Workflow is an abstraction that represents the workflow used to perform an analysis. The Workflow entity captures workflow-specific attributes that are relevant for an Analysis entity. The Workflow entity may be further characterized by its children where each child has fields that are relevant to that particular workflow.</li>
@@ -530,44 +534,53 @@
 </li>
 </ul>
 </li>
+<li><a href="Submission/">Submission</a> - A grouping entity that represents information about one or more entities. A submission can be considered as a set of inter-related (and inter-connected) entities that represent a data submission to GHGA.</li>
 <li><a href="WorkflowParameter/">WorkflowParameter</a> - A key/value pair that represents a parameter used in a Workflow Step.</li>
 </ul>
 <h3 id="mixins">Mixins<a class="headerlink" href="#mixins" title="Permanent link">&para;</a></h3>
 <h3 id="slots">Slots<a class="headerlink" href="#slots" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="abstract/">abstract</a> - The abstract - a short blurb - associated with an entity.</li>
+<li><a href="abstract/">abstract</a> - The study abstract that describes the goals.  Can also hold abstract from a publication related to this study</li>
 <li><a href="accession/">accession</a> - A unique identifier assigned to an entity for the sole purpose of referring to that entity in a global scope.<ul>
 <li><a href="named_thing_accession/">named thing➞accession</a></li>
 </ul>
 </li>
 <li><a href="additional_name/">additional name</a> - Additional name(s).</li>
-<li><a href="age/">age</a> - The age of a person.<ul>
-<li><a href="individual_age/">individual➞age</a> - Age of an Individual.</li>
+<li><a href="affiliation/">affiliation</a> - Institutions associated with this study.<ul>
+<li><a href="study_affiliation/">study➞affiliation</a></li>
 </ul>
 </li>
-<li><a href="ancestry/">ancestry</a> - Ancestral group to which a person belongs to.<ul>
-<li><a href="individual_ancestry/">individual➞ancestry</a> - Ancestry of an Individual.  Typically a value from Human Ancestry Ontology. For example, 'HANCESTRO:0005' signifies this Individual belongs to the 'European' ancestry.</li>
+<li><a href="age/">age</a> - Age of an individual.<ul>
+<li><a href="individual_age/">individual➞age</a></li>
 </ul>
 </li>
-<li><a href="category/">category</a> - The file category.<ul>
-<li><a href="file_category/">file➞category</a> - The category for this file: Whole Genome Sequencing, Whole Exome Sequencing, etc.</li>
+<li><a href="ancestry/">ancestry</a> - A person's descent or lineage, from a person or from a population.</li>
+<li><a href="biological_replicates/">biological replicates</a> - Number of independent samples (biological replicates).<ul>
+<li><a href="experiment_biological_replicates/">experiment➞biological replicates</a> - A biological replicate is a replicate role that consists of  independent biological replicates made from different individual biosamples.</li>
 </ul>
 </li>
-<li><a href="checksum/">checksum</a> - The checksum for a file.<ul>
-<li><a href="file_checksum/">file➞checksum</a> - The checksum for the file.</li>
-</ul>
-</li>
+<li><a href="category/">category</a> - The category for this file: Whole Genome Sequencing, Whole Exome Sequencing, etc.</li>
+<li><a href="cell_barcode_offset/">cell barcode offset</a> - The offset in sequence of the cell identifying barcode. (Eg. '0').</li>
+<li><a href="cell_barcode_read/">cell barcode read</a> - The type of read that contains the cell barcode (eg: index1/index2/read1/read2).</li>
+<li><a href="cell_barcode_size/">cell barcode size</a> - The size of the cell identifying barcode (E.g. '16').</li>
+<li><a href="checksum/">checksum</a> - A computed value which depends on the contents of a block of data and which is transmitted or  stored along with the data in order to detect corruption of the data.  The receiving system recomputes the checksum based upon the received data and compares this  value with the one sent with the data. If the two values are the same, the receiver has some confidence  that the data was received correctly.</li>
 <li><a href="creation_date/">creation date</a> - Timestamp (in ISO 8601 format) when the entity was created.<ul>
 <li><a href="named_thing_creation_date/">named thing➞creation date</a></li>
+<li><a href="submission_creation_date/">submission➞creation date</a> - Timestamp (in ISO 8601 format) when the Submission was created.</li>
 </ul>
 </li>
+<li><a href="deprecation_date/">deprecation date</a> - The timestamp (in ISO 8601 format) when the entity was deprecated.</li>
 <li><a href="description/">description</a> - Description of an entity.<ul>
 <li><a href="data_access_policy_description/">data access policy➞description</a> - A short description for the Data Access Policy.</li>
 <li><a href="dataset_description/">dataset➞description</a></li>
-<li><a href="experiment_description/">experiment➞description</a> - A description for the Experiment.</li>
-<li><a href="project_description/">project➞description</a> - A detailed description about this Project.</li>
-<li><a href="protocol_description/">protocol➞description</a> - Detailed description of the Protocol.</li>
-<li><a href="sample_description/">sample➞description</a> - Brief description of the Sample.</li>
+<li><a href="experiment_description/">experiment➞description</a> - A detailed description of the Experiment.</li>
+<li><a href="project_description/">project➞description</a> - Short textual description of the project   (Some information on the protocol, sample used and collected etc)  </li>
+<li><a href="protocol_description/">protocol➞description</a> - Detailed description of the Protocol.<ul>
+<li><a href="library_preparation_protocol_description/">library preparation protocol➞description</a> - Description about how a sequencing library was prepared (eg: Library construction method).</li>
+<li><a href="sequencing_protocol_description/">sequencing protocol➞description</a> - Description about the sequencing protocol (eg: mRNA-seq,Whole exome long-read sequencing etc).</li>
+</ul>
+</li>
+<li><a href="sample_description/">sample➞description</a> - Short textual description of the sample   (How the sample was collected, sample source,  protocol followed for processing the sample etc).</li>
 <li><a href="study_description/">study➞description</a> - A detailed description (abstract) that describes the goals of this Study.</li>
 </ul>
 </li>
@@ -575,35 +588,28 @@
 <li><a href="member_email/">member➞email</a> - The email of the Member.</li>
 </ul>
 </li>
-<li><a href="ethnicity/">ethnicity</a> - Ethnicity of a person.<ul>
-<li><a href="individual_ethnicity/">individual➞ethnicity</a> - Ethnicity of an Individual.</li>
+<li><a href="end_bias/">end bias</a> - The end of the cDNA molecule that is preferentially sequenced,  e.g. 3/5 prime tag or end, or the full-length transcript.</li>
+<li><a href="ethnicity/">ethnicity</a> - A social group characterized by a distinctive social and cultural tradition  that is maintained from generation to generation.</li>
+<li><a href="experimental_replicates/">experimental replicates</a> - Number of experiment replications.<ul>
+<li><a href="experiment_experimental_replicates/">experiment➞experimental replicates</a> - The replicate number of the assay, i.e. the numeric iteration  for the assay that was repeated.</li>
 </ul>
 </li>
 <li><a href="family_name/">family name</a> - Last name.</li>
-<li><a href="file_index/">file_index</a> - The index file corresponding to the file.<ul>
-<li><a href="file_file_index/">file➞file_index</a> - The index for this file. Commonly for BAM/VCF files.</li>
-</ul>
-</li>
-<li><a href="format/">format</a> - The format of a file.<ul>
-<li><a href="file_format/">file➞format</a> - The format of the file: BAM, SAM, CRAM, BAI, etc.</li>
-</ul>
-</li>
-<li><a href="gender/">gender</a> - The assemblage of properties that distinguish people on the basis of the societal role s expected for the two sexes. [NCI]<ul>
-<li><a href="individual_gender/">individual➞gender</a> - Gender of an Individual.</li>
-</ul>
-</li>
-<li><a href="geographical_region/">geographical region</a> - The geographical region linked to an entity.<ul>
-<li><a href="individual_geographical_region/">individual➞geographical region</a> - The geographical region where the Individual is located. Typically a value from Human Ancestry Ontology. For example, 'HANCESTRO:0047' signifies this Individual is from 'Western Europe' region.</li>
-</ul>
-</li>
+<li><a href="file_index/">file index</a> - The index for this file. Commonly for BAM/VCF files.</li>
+<li><a href="flow_cell_id/">flow cell id</a> - Flow Cell ID (eg: Experiment ID_Cell 1_Lane_1). The barcode assigned to a flow cell used in nucleotide sequencing.</li>
+<li><a href="flow_cell_type/">flow cell type</a> - Type of flow cell used (e.g. S4, S2 for NovaSeq; PromethION, Flongle for Nanopore). Aparatus in the fluidic subsystem where the sheath and sample meet.  Can be one of several types; jet-in-air, quartz cuvette, or a hybrid of the two.  The sample flows through the center of a fluid column of sheath fluid in the flow cell.</li>
+<li><a href="format/">format</a> - The format of the file: BAM, SAM, CRAM, BAI, etc.</li>
+<li><a href="gender/">gender</a> - Identification as male/masculine, female/feminine or something else,  and association with a (social) role or set of behavioral and cultural traits.</li>
+<li><a href="geographical_region/">geographical region</a> - The geographical region where the Individual is located. Any demarcated area of the Earth; may be determined by both natural and human boundaries.</li>
 <li><a href="given_name/">given name</a> - First name.</li>
-<li><a href="has_agent/">has agent</a><ul>
+<li><a href="has_agent/">has agent</a> - A person or an entity that is performing a Planned Process entity.<ul>
 <li><a href="analysis_process_has_agent/">analysis process➞has agent</a> - The Agent - a software, institution, or human - that is executing or responsible for executing the workflow.</li>
 <li><a href="experiment_process_has_agent/">experiment process➞has agent</a> - The Agent - a software, institution, or human - that is executing or responsible for executing the Experiment Process.</li>
 </ul>
 </li>
 <li><a href="has_analysis/">has analysis</a> - The analysis associated with an entity.<ul>
 <li><a href="study_has_analysis/">study➞has analysis</a> - One or more Analysis entities associated with this Study.</li>
+<li><a href="submission_has_analysis/">submission➞has analysis</a> - Information about one or more Analysis entities associated with this submission.</li>
 </ul>
 </li>
 <li><a href="has_analysis_process/">has analysis process</a><ul>
@@ -616,15 +622,20 @@
 </li>
 <li><a href="has_attribute/">has attribute</a> - Key/value pairs corresponding to an entity.<ul>
 <li><a href="named_thing_has_attribute/">named thing➞has attribute</a> - Holds one or more Attribute entities that further characterizes this entity.<ul>
-<li><a href="project_has_attribute/">project➞has attribute</a> - Custom key/value pairs that further characterizes this Project.</li>
-<li><a href="protocol_has_attribute/">protocol➞has attribute</a> - One or more attributes that further characterizes this Protocol.</li>
-<li><a href="study_has_attribute/">study➞has attribute</a> - Custom key/value pairs that further characterizes the Study.</li>
+<li><a href="project_has_attribute/">project➞has attribute</a> - Custom attributes for the Project  (eg: Cancer - Colon cancer, prostrate cancer, blood cancer etc)</li>
+<li><a href="protocol_has_attribute/">protocol➞has attribute</a> - One or more attributes that further characterizes this Protocol.<ul>
+<li><a href="library_preparation_protocol_has_attribute/">library preparation protocol➞has attribute</a> - One or more attributes that further characterizes this Library Preparation Protocol.</li>
+<li><a href="sequencing_protocol_has_attribute/">sequencing protocol➞has attribute</a> - One or more attributes that further characterizes this Sequencing Protocol.</li>
+</ul>
+</li>
+<li><a href="study_has_attribute/">study➞has attribute</a> - Custom key/value pairs that further characterizes the Study.  (e.g.: approaches - single-cell, bulk etc)</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="has_biospecimen/">has biospecimen</a><ul>
+<li><a href="has_biospecimen/">has biospecimen</a> - The biospecimen associated with an entity.<ul>
 <li><a href="sample_has_biospecimen/">sample➞has biospecimen</a> - The Biospecimen from which this Sample was prepared from.</li>
+<li><a href="submission_has_biospecimen/">submission➞has biospecimen</a> - Information about one or more Biospecimen entities associated with this submission.</li>
 </ul>
 </li>
 <li><a href="has_children/">has children</a> - The children of an entity.<ul>
@@ -638,24 +649,27 @@
 <li><a href="has_data_access_policy/">has data access policy</a> - Data Access Policy associated with an entity.<ul>
 <li><a href="analysis_dataset_has_data_access_policy/">analysis dataset➞has data access policy</a> - The Data Access Policy that applies to this Dataset.</li>
 <li><a href="experiment_dataset_has_data_access_policy/">experiment dataset➞has data access policy</a> - The Data Access Policy that applies to this Dataset.</li>
+<li><a href="submission_has_data_access_policy/">submission➞has data access policy</a> - The Data Access Policy entity that applies to the data associated with this submission.</li>
 </ul>
 </li>
 <li><a href="has_data_use_condition/">has data use condition</a> - Data Use Condition entities that are associated with an entity.<ul>
 <li><a href="data_access_policy_has_data_use_condition/">data access policy➞has data use condition</a> - Data Use Condition entities that are associated with the Data Access Policy.</li>
 </ul>
 </li>
-<li><a href="has_dataset/">has dataset</a><ul>
+<li><a href="has_dataset/">has dataset</a> - The Dataset associated with an entity.<ul>
 <li><a href="aggregate_dataset_has_dataset/">aggregate dataset➞has dataset</a> - One or more Datasets that constitutes this Aggregate Dataset.</li>
 </ul>
 </li>
 <li><a href="has_disease/">has disease</a> - Disease concept that the entity is associated with.<ul>
-<li><a href="biospecimen_has_disease/">biospecimen➞has disease</a> - The Disease entity that is associated with this Biospecimen at the time of retrieval from the organism. Typically, a concept from Mondo Disease Ontology. For example, 'MONDO:0003742' indicates that the Individual - from which the Biospecimen was extracted from - suffers from 'Heart Fibrosarcoma'.</li>
+<li><a href="biospecimen_has_disease/">biospecimen➞has disease</a> - The Disease entity that is associated with the Individual. Typically, a concept from Mondo Disease Ontology. For example, 'MONDO:0005267' indicates that the Individual suffers from 'Heart Disease'.</li>
+<li><a href="individual_has_disease/">individual➞has disease</a> - The Disease entity that is associated with this Biospecimen at the time of retrieval from the organism. Typically, a concept from Mondo Disease Ontology. For example, 'MONDO:0003742' indicates that the Individual - from which the Biospecimen was extracted from - suffers from 'Heart Fibrosarcoma'.</li>
 </ul>
 </li>
 <li><a href="has_experiment/">has experiment</a> - The experiment associated with an entity.<ul>
 <li><a href="analysis_dataset_has_experiment/">analysis dataset➞has experiment</a> - One or more Analysis entities that are referenced by this Dataset.</li>
 <li><a href="experiment_dataset_has_experiment/">experiment dataset➞has experiment</a> - One or more Experiment entities that are referenced by this Dataset.</li>
 <li><a href="study_has_experiment/">study➞has experiment</a> - One or more Experiment entities associated with this Study.</li>
+<li><a href="submission_has_experiment/">submission➞has experiment</a> - Information about one or more Experiment entities associated with this submission.</li>
 </ul>
 </li>
 <li><a href="has_experiment_process/">has experiment process</a><ul>
@@ -665,32 +679,35 @@
 <li><a href="has_file/">has file</a> - The file associated with an entity.<ul>
 <li><a href="dataset_has_file/">dataset➞has file</a> - One or more File entities that collectively are part of this Dataset.</li>
 <li><a href="experiment_has_file/">experiment➞has file</a> - One or more Files entities that are generated as output of this Experiment.</li>
+<li><a href="submission_has_file/">submission➞has file</a> - Information about one or more File entities associated with this submission.</li>
 </ul>
 </li>
 <li><a href="has_individual/">has individual</a> - The subject/individual associated with an entity.<ul>
 <li><a href="biospecimen_has_individual/">biospecimen➞has individual</a> - The Individual entity from which this Biospecimen was derived.</li>
 <li><a href="sample_has_individual/">sample➞has individual</a> - The Individual from which this Sample was derived from.</li>
+<li><a href="submission_has_individual/">submission➞has individual</a> - Information about one or more Individual entities associated with this submission.</li>
 </ul>
 </li>
-<li><a href="has_input/">has input</a><ul>
+<li><a href="has_input/">has input</a> - The input to a Planned Process.<ul>
 <li><a href="analysis_process_has_input/">analysis process➞has input</a> - The input data File entities used in the Analysis Process.</li>
 <li><a href="analysis_has_input/">analysis➞has input</a> - The input data File entities used in the Analysis.</li>
 <li><a href="experiment_process_has_input/">experiment process➞has input</a> - The input to the Experiment Process. Usually a Sample entity.</li>
 </ul>
 </li>
+<li><a href="has_library_preparation_protocol/">has library preparation protocol</a> - The Library Preparation Protocol associated with an entity.</li>
 <li><a href="has_member/">has member</a> - The members associated with a committee.<ul>
 <li><a href="cohort_has_member/">cohort➞has member</a> - One or more Individuals that collectively define this Cohort.</li>
 <li><a href="data_access_committee_has_member/">data access committee➞has member</a> - All the members that are part of this Data Access Committee.</li>
 <li><a href="family_has_member/">family➞has member</a> - One or more Individuals that collectively define this Family.</li>
 </ul>
 </li>
-<li><a href="has_output/">has output</a><ul>
+<li><a href="has_output/">has output</a> - The output of a Planned Process entity.<ul>
 <li><a href="analysis_process_has_output/">analysis process➞has output</a> - The output data File entities generated by the Analysis Process.</li>
 <li><a href="analysis_has_output/">analysis➞has output</a> - The output data File entities generated by this Analysis.</li>
 <li><a href="experiment_process_has_output/">experiment process➞has output</a> - The output of this Experiment Process. Usually a File entity.</li>
 </ul>
 </li>
-<li><a href="has_parameter/">has parameter</a><ul>
+<li><a href="has_parameter/">has parameter</a> - The parameter(s) associated with a Workflow Step entity.<ul>
 <li><a href="workflow_step_has_parameter/">workflow step➞has parameter</a> - One or more parameters that are associated with this Workflow Step.</li>
 </ul>
 </li>
@@ -699,7 +716,17 @@
 </ul>
 </li>
 <li><a href="has_phenotypic_feature/">has phenotypic feature</a> - Phenotypic feature concept that the entity is associated with.<ul>
-<li><a href="biospecimen_has_phenotypic_feature/">biospecimen➞has phenotypic feature</a> - The Phenotypic Feature entity that is associated with this Biospecimen at the time of retrieval from the organism. Typically, a concept from Human Phenotype Ontology. For example, 'HP:0100244' indicates that the Individual - from which the Biospecimen was extracted from - exhibits 'Fibrosarcoma' as one of its phenotype.</li>
+<li><a href="biospecimen_has_phenotypic_feature/">biospecimen➞has phenotypic feature</a> - The Phenotypic Feature entity that is associated with the Individual. Typically, a concept from Human Phenotype Ontology. For example, 'HP:0100244' indicates that the Individual exhibits 'Fibrosarcoma' as one of its phenotype.</li>
+<li><a href="individual_has_phenotypic_feature/">individual➞has phenotypic feature</a> - The Phenotypic Feature entity that is associated with this Biospecimen at the time of retrieval from the organism. Typically, a concept from Human Phenotype Ontology. For example, 'HP:0100244' indicates that the Individual - from which the Biospecimen was extracted from - exhibits 'Fibrosarcoma' as one of its phenotype.</li>
+</ul>
+</li>
+<li><a href="has_proband/">has proband</a> - The Individual that is reported to have a disorder in a Family.<ul>
+<li><a href="family_has_proband/">family➞has proband</a> - The Individual that is reported to have a disorder which results in the Family being brought into a Study.</li>
+</ul>
+</li>
+<li><a href="has_project/">has project</a> - The project associated with an entity.<ul>
+<li><a href="study_has_project/">study➞has project</a> - The project associated with this Study.</li>
+<li><a href="submission_has_project/">submission➞has project</a> - Information about a Project entity associated with this submission.</li>
 </ul>
 </li>
 <li><a href="has_protocol/">has protocol</a> - The protocol associated with an entity.<ul>
@@ -714,25 +741,28 @@
 </li>
 <li><a href="has_sample/">has sample</a> - The sample associated with an entity.<ul>
 <li><a href="experiment_has_sample/">experiment➞has sample</a> - The Sample entity associated with this Experiment.</li>
+<li><a href="submission_has_sample/">submission➞has sample</a> - Information about one or more Sample entities associated with this submission.</li>
 </ul>
 </li>
+<li><a href="has_sequencing_protocol/">has sequencing protocol</a> - The sequencing protocol associated with an entity.</li>
 <li><a href="has_study/">has study</a> - The study associated with an entity.<ul>
 <li><a href="analysis_dataset_has_study/">analysis dataset➞has study</a> - One or more Study entities that are referenced by this Dataset.</li>
 <li><a href="analysis_has_study/">analysis➞has study</a> - The Study entity associated with this Analysis.</li>
 <li><a href="experiment_dataset_has_study/">experiment dataset➞has study</a> - One or more Study entities that are referenced by this Dataset.</li>
 <li><a href="experiment_has_study/">experiment➞has study</a> - The Study entity associated with this Experiment.</li>
 <li><a href="project_has_study/">project➞has study</a> - One or more Study entities associated with this Project.</li>
+<li><a href="submission_has_study/">submission➞has study</a> - Information about a Study entities associated with this submission.</li>
 </ul>
 </li>
 <li><a href="has_technology/">has technology</a> - The technology associated with an entity.<ul>
 <li><a href="experiment_has_technology/">experiment➞has technology</a> - The Technology entity associated with this Experiment.</li>
 </ul>
 </li>
-<li><a href="has_workflow/">has workflow</a><ul>
+<li><a href="has_workflow/">has workflow</a> - The Workflow entity associated wtih a Planned Process entity.<ul>
 <li><a href="analysis_has_workflow/">analysis➞has workflow</a> - The Workflow entity associated with this Analysis.</li>
 </ul>
 </li>
-<li><a href="has_workflow_step/">has workflow step</a><ul>
+<li><a href="has_workflow_step/">has workflow step</a> - The individual workflow step that with other workflow step(s) collectively defines a Workflow entity.<ul>
 <li><a href="analysis_process_has_workflow_step/">analysis process➞has workflow step</a> - Workflow Step entity that performs a set of operations on the input data Files to generate a set of output data Files.</li>
 </ul>
 </li>
@@ -741,8 +771,14 @@
 <li><a href="publication_id/">publication➞id</a> - A PMID or DOI for the Publication.</li>
 </ul>
 </li>
+<li><a href="submission_id/">submission➞id</a> - A internal unique identifier for the Submission.</li>
 </ul>
 </li>
+<li><a href="instrument_model/">instrument model</a> - The name and model of the technology platform used to perform sequencing.<ul>
+<li><a href="sequencing_protocol_instrument_model/">sequencing protocol➞instrument model</a></li>
+</ul>
+</li>
+<li><a href="isolation/">isolation</a> - Method or device employed for collecting/isolating a sample.</li>
 <li><a href="key/">key</a> - The key of an attribute.<ul>
 <li><a href="attribute_key/">attribute➞key</a> - The key for an attribute.</li>
 <li><a href="workflow_parameter_key/">workflow parameter➞key</a> - Key that represents the parameter name.</li>
@@ -750,6 +786,40 @@
 </li>
 <li><a href="key_type/">key type</a> - The semantic type for the key of an attribute.<ul>
 <li><a href="attribute_key_type/">attribute➞key type</a> - A semantic type that characterizes the attribute key. Usually this is a term from an ontology. For example, 'MAXO:0000616' indicates that the attribute is a measurement of oxygen saturation in the blood.</li>
+</ul>
+</li>
+<li><a href="lane_number/">lane number</a> - he numerical identifier for the lane or machine unit where a sample was located during nucleotide sequencing.</li>
+<li><a href="library_construction/">library construction</a> - The name of a library construction approach being used. (eg: '10X v2 sequencing' or 'Smart-seq2')<ul>
+<li><a href="library_preparation_protocol_library_construction/">library preparation protocol➞library construction</a></li>
+</ul>
+</li>
+<li><a href="library_construction_kit_manufacturer/">library construction kit manufacturer</a> - Manufacturer of library construction kit<ul>
+<li><a href="library_preparation_protocol_library_construction_kit_manufacturer/">library preparation protocol➞library construction kit manufacturer</a></li>
+</ul>
+</li>
+<li><a href="library_construction_kit_retail_name/">library construction kit retail name</a> - A unique identifier for the kit used to construct a genomic library.  This may include the vendor name, kit name and kit version  (e.g. Agilent sure select Human Exome V8, Twist RefSeq Exome, etc.)<ul>
+<li><a href="library_preparation_protocol_library_construction_kit_retail_name/">library preparation protocol➞library construction kit retail name</a></li>
+</ul>
+</li>
+<li><a href="library_layout/">library layout</a> - Describe whether the library was sequenced in single-end (forward or reverse) or paired-end mode<ul>
+<li><a href="library_preparation_protocol_library_layout/">library preparation protocol➞library layout</a></li>
+</ul>
+</li>
+<li><a href="library_level/">library level</a> - Single Cell Sequencing or Bulk Sequencing</li>
+<li><a href="library_name/">library name</a> - A short name identifying the library to potential users.  The same name may refer to multiple versions of the same continually updated library.<ul>
+<li><a href="library_preparation_protocol_library_name/">library preparation protocol➞library name</a></li>
+</ul>
+</li>
+<li><a href="library_preparation/">library preparation</a> - The general method for sequencing library construction (e.g. KAPA PCR-free).<ul>
+<li><a href="library_preparation_protocol_library_preparation/">library preparation protocol➞library preparation</a></li>
+</ul>
+</li>
+<li><a href="library_selection/">library selection</a> - Whether any method was used to select for or against, enrich, or screen the material being sequenced. Library Selection method (e.g. random, PCA, cDNA, etc )<ul>
+<li><a href="library_preparation_protocol_library_selection/">library preparation protocol➞library selection</a></li>
+</ul>
+</li>
+<li><a href="library_type/">library type</a> - Describe the level of omics analysis (eg: Metagenome, transcriptome, etc) <ul>
+<li><a href="library_preparation_protocol_library_type/">library preparation protocol➞library type</a></li>
 </ul>
 </li>
 <li><a href="main_contact/">main contact</a> - The person who is the main contact for a committee.<ul>
@@ -762,16 +832,19 @@
 </li>
 <li><a href="name/">name</a> - The name for an entity.<ul>
 <li><a href="data_access_committee_name/">data access committee➞name</a></li>
-<li><a href="experiment_name/">experiment➞name</a> - Name for the Experiment.</li>
-<li><a href="protocol_name/">protocol➞name</a> - Name of the Protocol.</li>
-<li><a href="sample_name/">sample➞name</a> - Name of the Sample.</li>
+<li><a href="file_name/">file➞name</a></li>
+<li><a href="protocol_name/">protocol➞name</a> - Name of the protocol (eg: Sample extraction_PCR amplification).<ul>
+<li><a href="library_preparation_protocol_name/">library preparation protocol➞name</a> - Name of the library preparation protocol (eg: mRNA-seq library preparation).</li>
+<li><a href="sequencing_protocol_name/">sequencing protocol➞name</a> - Name of the library preparation protocol (eg: mRNA-seq,Whole exome long-read sequencing etc).</li>
+</ul>
+</li>
+<li><a href="sample_name/">sample➞name</a> - Name of the sample (eg:GHGAS_Blood_Sample1 or GHGAS_PBMC_RNAseq_S1).</li>
 </ul>
 </li>
 <li><a href="organization/">organization</a> - The organization associated with a person.<ul>
 <li><a href="member_organization/">member➞organization</a> - The organization that the Member is part of.</li>
 </ul>
 </li>
-<li><a href="parameters/">parameters</a> - Paramaters associated with a Workflow Step entity.</li>
 <li><a href="permission/">permission</a> - Data use permission.<ul>
 <li><a href="data_use_condition_permission/">data use condition➞permission</a> - Data use permission. Typically one or more terms from DUO. Preferably descendants of 'DUO:0000001 data use permission'.</li>
 </ul>
@@ -784,44 +857,82 @@
 <li><a href="data_access_policy_policy_url/">data access policy➞policy url</a> - URL for the policy, if available. This is useful if the terms of the policy is made available online at a resolvable URL.</li>
 </ul>
 </li>
-<li><a href="proband/">proband</a><ul>
-<li><a href="family_proband/">family➞proband</a> - The Individual that is reported to have a disorder which results in the Family being brought into a Study.</li>
+<li><a href="primer/">primer</a> - The type of primer used for reverse transcription, e.g. 'oligo-dT' or 'random' primer. This allows users to identify content of the cDNA library input e.g. enriched for mRNA.</li>
+<li><a href="read_length/">read length</a> - Length of sequencing reads (eg: Long or short or actual number of the read length etc). The number of nucleotides successfully ordered from each side of a nucleic acid fragment  obtained after the completion of a sequencing process</li>
+<li><a href="read_pair_number/">read pair number</a> - Denotes whether a submitted FASTQ file contains forward (R1) or reverse (R2) reads for paired-end sequencing. The number that identifies each read direction in a paired-end nucleotide sequencing replications.</li>
+<li><a href="reference_annotation/">reference annotation</a> - A published genetic sequence that is used as a reference sequence against which other sequences are compared. Reference genome(s) or annotation(s) used for prior analyses (eg: GRCh38.p13).</li>
+<li><a href="release_date/">release date</a> - The timestamp (in ISO 8601 format) when the entity was released for public consumption.</li>
+<li><a href="replaced_by/">replaced by</a> - Refers to the entity which replaces a currently deprecated entity.<ul>
+<li><a href="submission_replaced_by/">submission➞replaced by</a> - Refers to the Submission which replaces a currently deprecated Submission.</li>
 </ul>
 </li>
-<li><a href="role/">role</a><ul>
+<li><a href="replaces/">replaces</a> - Refers to a deprecated entity that is being replaced by the current entity.<ul>
+<li><a href="submission_replaces/">submission➞replaces</a> - Refers to a deprecated Submission that is being replaced by the current Submission.</li>
+</ul>
+</li>
+<li><a href="rnaseq_strandedness/">rnaseq strandedness</a> - The strandedness of the library, whether reads come from both strands of the cDNA  or only from the first (antisense) or the second (sense) strand.</li>
+<li><a href="role/">role</a> - The role that a user has within GHGA.<ul>
 <li><a href="user_role/">user➞role</a> - The role of the user</li>
 </ul>
 </li>
-<li><a href="sex/">sex</a> - The assemblage of physical properties or qualities by which male is distinguished from female.[NCI]<ul>
-<li><a href="individual_sex/">individual➞sex</a> - Biological Sex of an Individual.</li>
+<li><a href="sample_barcode_read/">sample barcode read</a> - The type of read that contains the sample barcode (eg: index1/index2/read1/read2).</li>
+<li><a href="sequencing_center/">sequencing center</a> - Center where sample was sequenced.<ul>
+<li><a href="sequencing_protocol_sequencing_center/">sequencing protocol➞sequencing center</a></li>
 </ul>
 </li>
-<li><a href="size/">size</a> - The size of a file in bytes.<ul>
-<li><a href="file_size/">file➞size</a> - The file size in bytes.</li>
+<li><a href="sequencing_length/">sequencing length</a> - Long or Short Read.</li>
+<li><a href="sex/">sex</a> - The assemblage of physical properties or qualities by which male is distinguished from female;  the physical difference between male and female; the distinguishing peculiarity of male or female.<ul>
+<li><a href="individual_sex/">individual➞sex</a></li>
+</ul>
+</li>
+<li><a href="size/">size</a> - The size of a file in bytes.</li>
+<li><a href="status/">status</a> - The status of an entity.<ul>
+<li><a href="dataset_status/">dataset➞status</a></li>
+<li><a href="submission_status/">submission➞status</a> - The status of a Submission. For example, 'in progress' or 'submitted'.</li>
+</ul>
+</li>
+<li><a href="storage/">storage</a> - Methods by which sample is stored  (e.g. frozen in liquid nitrogen).</li>
+<li><a href="submission_date/">submission date</a> - The timestamp (in ISO 8601 format) when submission was marked completed.</li>
+<li><a href="target_coverage/">target coverage</a> - Mean coverage for whole genome sequencing, or mean target coverage for whole exome and targeted sequencing. The number of times a particular locus (site, nucleotide, amplicon, region) was sequenced.</li>
+<li><a href="target_regions/">target regions</a> - Subset of genes or specific regions of the genome, which are most likely to be involved in the phenotype under study. </li>
+<li><a href="technical_replicates/">technical replicates</a> - Number of replicate samples (technical replicates).<ul>
+<li><a href="experiment_technical_replicates/">experiment➞technical replicates</a> - A technical replicate is a replicate role where the same BioSample is use e.g.  the same pool of RNA used to assess technical (as opposed to biological)  variation within an experiment.</li>
 </ul>
 </li>
 <li><a href="telephone/">telephone</a> - The telephone number associated with a person.<ul>
 <li><a href="member_telephone/">member➞telephone</a> - The telephone number of the Member.</li>
 </ul>
 </li>
+<li><a href="tissue/">tissue</a> - An anatomical structure consisting of similarly specialized cells and intercellular matrix,  aggregated according to genetically determined spatial relationships, performing a specific function.<ul>
+<li><a href="sample_tissue/">sample➞tissue</a></li>
+</ul>
+</li>
 <li><a href="title/">title</a> - The title that describes an entity.<ul>
 <li><a href="dataset_title/">dataset➞title</a></li>
+<li><a href="experiment_process_title/">experiment process➞title</a> - A descriptive title that explains the step(s) involved in performing the experiment leading up to the sequencing of the sample and generation of raw data from the instrument. (eg: Sample extraction -&gt; Target Enrichment) </li>
+<li><a href="experiment_title/">experiment➞title</a> - Name for the experiment (eg: GHGAE_PBMC_RNAseq).</li>
+<li><a href="project_title/">project➞title</a> - Comprehensive title for the project.</li>
 <li><a href="publication_title/">publication➞title</a> - The title for the Publication.</li>
-<li><a href="study_title/">study➞title</a> - A descriptive title for the Study.</li>
+<li><a href="study_title/">study➞title</a> - Comprehensive title for the study.</li>
 </ul>
 </li>
 <li><a href="type/">type</a> - The type of an entity.<ul>
 <li><a href="named_thing_type/">named thing➞type</a><ul>
 <li><a href="dataset_type/">dataset➞type</a></li>
 <li><a href="file_type/">file➞type</a> - The file type: Aligned Reads, Unaligned Reads, etc.</li>
+<li><a href="protocol_type/">protocol➞type</a> - Type of the protocol (eg: Target enrichment).</li>
 <li><a href="sample_type/">sample➞type</a> - Type of sample: 'Case' or 'Control'.</li>
+<li><a href="study_type/">study➞type</a> - The type of Study. For example, 'Cancer Genomics', 'Epigenetics', 'Exome Sequencing'.</li>
 </ul>
 </li>
-<li><a href="study_type/">study➞type</a> - The type of Study. For example, "Cancer Genomics", "Epigenetics", "Exome Sequencing".</li>
 </ul>
 </li>
+<li><a href="umi_barcode_offset/">umi barcode offset</a> - The offset in sequence of the UMI identifying barcode. (E.g. '16').</li>
+<li><a href="umi_barcode_read/">umi barcode read</a> - The type of read that contains the UMI barcode (Eg: index1/index2/read1/read2).</li>
+<li><a href="umi_barcode_size/">umi barcode size</a> - The size of the UMI identifying barcode (Eg. '10').</li>
 <li><a href="update_date/">update date</a> - Timestamp (in ISO 8601 format) when the entity was updated.<ul>
 <li><a href="named_thing_update_date/">named thing➞update date</a></li>
+<li><a href="submission_update_date/">submission➞update date</a> - Timestamp (in ISO 8601 format) when the Submission was updated.</li>
 </ul>
 </li>
 <li><a href="url/">url</a> - A URL to a resource.<ul>
@@ -837,28 +948,31 @@
 <li><a href="attribute_value_type/">attribute➞value type</a> - The value type that characterizes the attribute value. Usually this is a term from an ontology that describes how to interpret the value. For example, 'SIO:001413' indicates that the value is to be interpreted as a percentage.</li>
 </ul>
 </li>
-<li><a href="vital_status/">vital status</a> - Vital status of a person.<ul>
-<li><a href="individual_vital_status/">individual➞vital status</a> - Vital status of an Individual.</li>
+<li><a href="vital_status/">vital status</a> - The state or condition of being living or deceased;  also includes the case where the vital status is unknown.<ul>
+<li><a href="individual_vital_status/">individual➞vital status</a> - Last known Vital Status of an Individual.</li>
 </ul>
 </li>
+<li><a href="vital_status_at_sampling/">vital status at sampling</a> - Vital Status of an Individual at the point of sampling (eg:'Alive', 'Deceased').</li>
 <li><a href="xref/">xref</a> - Alternate identifiers for an entity.<ul>
 <li><a href="named_thing_xref/">named thing➞xref</a> - Holds one or more database cross references.<ul>
+<li><a href="protocol_xref/">protocol➞xref</a> - One or more cross-references for this Protocol.  (Eg: manufacturer protocol, protocol from publication etc )</li>
 <li><a href="publication_xref/">publication➞xref</a> - One or more cross-references for this Publication.</li>
 <li><a href="sample_xref/">sample➞xref</a> - One or more cross-references for this Sample. For example, this Sample may have an EBI BioSamples accession or an EGA Sample accession.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="year_of_birth/">year of birth</a> - Year of Birth of a person.<ul>
-<li><a href="individual_year_of_birth/">individual➞year of birth</a> - Year of Birth of an Individual.</li>
-</ul>
-</li>
+<li><a href="year_of_birth/">year of birth</a> - The year in which the individual was born.</li>
 </ul>
 <h3 id="enums">Enums<a class="headerlink" href="#enums" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="biological_sex_enum/">biological_sex_enum</a> - The biological sex of an Individual as determined by their chromosomes.</li>
 <li><a href="case_control_enum/">case_control_enum</a> - Enum to capture whether a Sample is to be considered as Case or Control.</li>
+<li><a href="file_type_enum/">file_type_enum</a> - Enum to capture file types.</li>
+<li><a href="status_enum/">status_enum</a> - Enum to capture the status of an entity.</li>
+<li><a href="study_type_enum/">study_type_enum</a> - Enum to capture the type of a study.</li>
 <li><a href="user_role_enum/">user_role_enum</a> - Enum to capture the different roles a GHGA User can have.</li>
+<li><a href="vital_status_enum/">vital_status_enum</a> - Enum to capture the vital status of an individual.</li>
 </ul>
 <h3 id="subsets">Subsets<a class="headerlink" href="#subsets" title="Permanent link">&para;</a></h3>
 <h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>

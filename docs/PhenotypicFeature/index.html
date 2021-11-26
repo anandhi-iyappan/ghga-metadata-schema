@@ -359,15 +359,16 @@
                 <h1 id="class-phenotypic-feature">Class: phenotypic feature<a class="headerlink" href="#class-phenotypic-feature" title="Permanent link">&para;</a></h1>
 <p>The observable form taken by some character (or group of characters) in an individual or an organism, excluding pathology and disease. The detectable outward manifestations of a specific genotype.</p>
 <p>URI: <a href="https://w3id.org/GHGA/PhenotypicFeature">GHGA:PhenotypicFeature</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Biospecimen]-%20has%20phenotypic%20feature%200..1&gt;[PhenotypicFeature&#124;name(i):string%20%3F;description(i):string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Biospecimen]-%20has%20phenotypic%20feature(i)%200..1&gt;[PhenotypicFeature],[DiseaseOrPhenotypicFeature]^-[PhenotypicFeature],[DiseaseOrPhenotypicFeature],[Biospecimen],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Biospecimen]-%20has%20phenotypic%20feature%200..1&gt;[PhenotypicFeature&#124;name(i):string%20%3F;description(i):string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Biospecimen]-%20has%20phenotypic%20feature(i)%200..1&gt;[PhenotypicFeature],[DiseaseOrPhenotypicFeature]^-[PhenotypicFeature],[DiseaseOrPhenotypicFeature],[Biospecimen],[Attribute]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Biospecimen]++-%20has%20phenotypic%20feature%200..*&gt;[PhenotypicFeature&#124;name(i):string%20%3F;description(i):string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Biospecimen]-%20has%20phenotypic%20feature(i)%200..1&gt;[PhenotypicFeature],[Individual]-%20has%20phenotypic%20feature(i)%200..1&gt;[PhenotypicFeature],[Individual]++-%20has%20phenotypic%20feature%200..*&gt;[PhenotypicFeature],[DiseaseOrPhenotypicFeature]^-[PhenotypicFeature],[NamedThing],[Individual],[DiseaseOrPhenotypicFeature],[Biospecimen],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Biospecimen]++-%20has%20phenotypic%20feature%200..*&gt;[PhenotypicFeature&#124;name(i):string%20%3F;description(i):string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Biospecimen]-%20has%20phenotypic%20feature(i)%200..1&gt;[PhenotypicFeature],[Individual]-%20has%20phenotypic%20feature(i)%200..1&gt;[PhenotypicFeature],[Individual]++-%20has%20phenotypic%20feature%200..*&gt;[PhenotypicFeature],[DiseaseOrPhenotypicFeature]^-[PhenotypicFeature],[NamedThing],[Individual],[DiseaseOrPhenotypicFeature],[Biospecimen],[Attribute]" /></a></p>
 <h2 id="parents">Parents<a class="headerlink" href="#parents" title="Permanent link">&para;</a></h2>
 <ul>
 <li>is_a: <a href="../DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> - Disease or Phenotypic Feature that the entity is associated with. This entity is a union of Disease and Phenotypic Feature and exists to accommodate situations where Disease concepts are used interchangeably with Phenotype concepts or vice-versa.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><a href="../Biospecimen/">Biospecimen</a></strong> <em><a href="../biospecimen_has_phenotypic_feature/">biospecimen➞has phenotypic feature</a></em>  <sub>0..1</sub>  <strong><a href="./">PhenotypicFeature</a></strong></li>
+<li><strong><a href="../Biospecimen/">Biospecimen</a></strong> <em><a href="../biospecimen_has_phenotypic_feature/">biospecimen➞has phenotypic feature</a></em>  <sub>0..*</sub>  <strong><a href="./">PhenotypicFeature</a></strong></li>
 <li><strong>None</strong> <em><a href="../has_phenotypic_feature/">has phenotypic feature</a></em>  <sub>0..1</sub>  <strong><a href="./">PhenotypicFeature</a></strong></li>
+<li><strong><a href="../Individual/">Individual</a></strong> <em><a href="../individual_has_phenotypic_feature/">individual➞has phenotypic feature</a></em>  <sub>0..*</sub>  <strong><a href="./">PhenotypicFeature</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
 <h3 id="inherited-from-disease-or-phenotypic-feature">Inherited from disease or phenotypic feature:<a class="headerlink" href="#inherited-from-disease-or-phenotypic-feature" title="Permanent link">&para;</a></h3>
@@ -405,6 +406,16 @@
 <li><a href="../named_thing_update_date/">named thing➞update date</a>  <sub>0..1</sub><ul>
 <li>Description: Timestamp (in ISO 8601 format) when the entity was updated.</li>
 <li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../replaces/">replaces</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to a deprecated entity that is being replaced by the current entity.</li>
+<li>Range: <a href="../NamedThing/">NamedThing</a></li>
+</ul>
+</li>
+<li><a href="../replaced_by/">replaced by</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to the entity which replaces a currently deprecated entity.</li>
+<li>Range: <a href="../NamedThing/">NamedThing</a></li>
 </ul>
 </li>
 <li><a href="../name/">name</a>  <sub>0..1</sub><ul>

@@ -359,7 +359,7 @@
                 <h1 id="class-donor">Class: donor<a class="headerlink" href="#class-donor" title="Permanent link">&para;</a></h1>
 <p>A Donor is an Individual that participates in a research Study by donating a Biospecimen. The use of the Biospecimen is restricted to the consent provided by the Donor.</p>
 <p>URI: <a href="https://w3id.org/GHGA/Donor">GHGA:Donor</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Individual],[Individual]^-[Donor&#124;gender(i):string%20%3F;sex(i):biological_sex_enum;age(i):integer%20%3F;year_of_birth(i):string%20%3F;vital_status(i):string%20%3F;geographical_region(i):string%20%3F;ethnicity(i):string%20%3F;ancestry(i):string%20%3F;has_parent(i):string%20%3F;has_children(i):string%20%3F;given_name(i):string%20%3F;family_name(i):string%20%3F;additional_name(i):string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Individual],[Individual]^-[Donor&#124;gender(i):string%20%3F;sex(i):biological_sex_enum;age(i):integer%20%3F;year_of_birth(i):string%20%3F;vital_status(i):string%20%3F;geographical_region(i):string%20%3F;ethnicity(i):string%20%3F;ancestry(i):string%20%3F;has_parent(i):string%20%3F;has_children(i):string%20%3F;given_name(i):string%20%3F;family_name(i):string%20%3F;additional_name(i):string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Attribute]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PhenotypicFeature],[NamedThing],[Individual],[Individual]^-[Donor&#124;gender(i):string%20%3F;sex(i):biological_sex_enum;age(i):integer;year_of_birth(i):string%20%3F;vital_status(i):vital_status_enum;geographical_region(i):string%20%3F;ethnicity(i):string%20%3F;ancestry(i):string%20%3F;given_name(i):string%20%3F;family_name(i):string%20%3F;additional_name(i):string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Disease],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PhenotypicFeature],[NamedThing],[Individual],[Individual]^-[Donor&#124;gender(i):string%20%3F;sex(i):biological_sex_enum;age(i):integer;year_of_birth(i):string%20%3F;vital_status(i):vital_status_enum;geographical_region(i):string%20%3F;ethnicity(i):string%20%3F;ancestry(i):string%20%3F;given_name(i):string%20%3F;family_name(i):string%20%3F;additional_name(i):string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Disease],[Attribute]" /></a></p>
 <h2 id="parents">Parents<a class="headerlink" href="#parents" title="Permanent link">&para;</a></h2>
 <ul>
 <li>is_a: <a href="../Individual/">Individual</a> - An Individual is a Person who is participating in a Study.</li>
@@ -402,6 +402,16 @@
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
+<li><a href="../replaces/">replaces</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to a deprecated entity that is being replaced by the current entity.</li>
+<li>Range: <a href="../NamedThing/">NamedThing</a></li>
+</ul>
+</li>
+<li><a href="../replaced_by/">replaced by</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to the entity which replaces a currently deprecated entity.</li>
+<li>Range: <a href="../NamedThing/">NamedThing</a></li>
+</ul>
+</li>
 <li><a href="../given_name/">given name</a>  <sub>0..1</sub><ul>
 <li>Description: First name.</li>
 <li>Range: <a href="../types/String/">String</a></li>
@@ -417,54 +427,64 @@
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../individual_gender/">individual➞gender</a>  <sub>0..1</sub><ul>
-<li>Description: Gender of an Individual.</li>
+<li><a href="../gender/">gender</a>  <sub>0..1</sub><ul>
+<li>Description: Identification as male/masculine, female/feminine or something else,  and association with a (social) role or set of behavioral and cultural traits.</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
 <li><a href="../individual_sex/">individual➞sex</a>  <sub>1..1</sub><ul>
-<li>Description: Biological Sex of an Individual.</li>
+<li>Description: The assemblage of physical properties or qualities by which male is distinguished from female;  the physical difference between male and female; the distinguishing peculiarity of male or female.</li>
 <li>Range: <a href="../biological_sex_enum/">biological_sex_enum</a></li>
 </ul>
 </li>
-<li><a href="../individual_age/">individual➞age</a>  <sub>0..1</sub><ul>
-<li>Description: Age of an Individual.</li>
+<li><a href="../individual_age/">individual➞age</a>  <sub>1..1</sub><ul>
+<li>Description: Age of an individual.</li>
 <li>Range: <a href="../types/Integer/">Integer</a></li>
 </ul>
 </li>
-<li><a href="../individual_year_of_birth/">individual➞year of birth</a>  <sub>0..1</sub><ul>
-<li>Description: Year of Birth of an Individual.</li>
+<li><a href="../year_of_birth/">year of birth</a>  <sub>0..1</sub><ul>
+<li>Description: The year in which the individual was born.</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../individual_vital_status/">individual➞vital status</a>  <sub>0..1</sub><ul>
-<li>Description: Vital status of an Individual.</li>
+<li><a href="../individual_vital_status/">individual➞vital status</a>  <sub>1..1</sub><ul>
+<li>Description: Last known Vital Status of an Individual.</li>
+<li>Range: <a href="../vital_status_enum/">vital_status_enum</a></li>
+</ul>
+</li>
+<li><a href="../geographical_region/">geographical region</a>  <sub>0..1</sub><ul>
+<li>Description: The geographical region where the Individual is located. Any demarcated area of the Earth; may be determined by both natural and human boundaries.</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../individual_geographical_region/">individual➞geographical region</a>  <sub>0..1</sub><ul>
-<li>Description: The geographical region where the Individual is located. Typically a value from Human Ancestry Ontology. For example, 'HANCESTRO:0047' signifies this Individual is from 'Western Europe' region.</li>
+<li><a href="../ethnicity/">ethnicity</a>  <sub>0..1</sub><ul>
+<li>Description: A social group characterized by a distinctive social and cultural tradition  that is maintained from generation to generation.</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../individual_ethnicity/">individual➞ethnicity</a>  <sub>0..1</sub><ul>
-<li>Description: Ethnicity of an Individual.</li>
+<li><a href="../ancestry/">ancestry</a>  <sub>0..1</sub><ul>
+<li>Description: A person's descent or lineage, from a person or from a population.</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../individual_ancestry/">individual➞ancestry</a>  <sub>0..1</sub><ul>
-<li>Description: Ancestry of an Individual.  Typically a value from Human Ancestry Ontology. For example, 'HANCESTRO:0005' signifies this Individual belongs to the 'European' ancestry.</li>
-<li>Range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
-<li><a href="../individual_has_parent/">individual➞has parent</a>  <sub>0..1</sub><ul>
+<li><a href="../individual_has_parent/">individual➞has parent</a>  <sub>0..*</sub><ul>
 <li>Description: One or more parent for this Individual.</li>
-<li>Range: <a href="../types/String/">String</a></li>
+<li>Range: <a href="../Individual/">Individual</a></li>
 </ul>
 </li>
-<li><a href="../individual_has_children/">individual➞has children</a>  <sub>0..1</sub><ul>
+<li><a href="../individual_has_children/">individual➞has children</a>  <sub>0..*</sub><ul>
 <li>Description: One or more children for this Individual.</li>
-<li>Range: <a href="../types/String/">String</a></li>
+<li>Range: <a href="../Individual/">Individual</a></li>
+</ul>
+</li>
+<li><a href="../individual_has_disease/">individual➞has disease</a>  <sub>0..*</sub><ul>
+<li>Description: The Disease entity that is associated with this Biospecimen at the time of retrieval from the organism. Typically, a concept from Mondo Disease Ontology. For example, 'MONDO:0003742' indicates that the Individual - from which the Biospecimen was extracted from - suffers from 'Heart Fibrosarcoma'.</li>
+<li>Range: <a href="../Disease/">Disease</a></li>
+</ul>
+</li>
+<li><a href="../individual_has_phenotypic_feature/">individual➞has phenotypic feature</a>  <sub>0..*</sub><ul>
+<li>Description: The Phenotypic Feature entity that is associated with this Biospecimen at the time of retrieval from the organism. Typically, a concept from Human Phenotype Ontology. For example, 'HP:0100244' indicates that the Individual - from which the Biospecimen was extracted from - exhibits 'Fibrosarcoma' as one of its phenotype.</li>
+<li>Range: <a href="../PhenotypicFeature/">PhenotypicFeature</a></li>
 </ul>
 </li>
 </ul>

@@ -359,10 +359,15 @@
                 <h1 id="class-protocol">Class: protocol<a class="headerlink" href="#class-protocol" title="Permanent link">&para;</a></h1>
 <p>A plan specification which has sufficient level of detail and quantitative information to communicate it between investigation agents, so that different investigation agents will reliably be able to independently reproduce the process.</p>
 <p>URI: <a href="https://w3id.org/GHGA/Protocol">GHGA:Protocol</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Attribute]&lt;has%20attribute%200..*-++[Protocol&#124;name:string%20%3F;description:string%20%3F;url:string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[ExperimentProcess]-%20has%20protocol%200..1&gt;[Protocol],[ExperimentProcess]-%20has%20protocol(i)%200..1&gt;[Protocol],[InformationContentEntity]^-[Protocol],[InformationContentEntity],[ExperimentProcess],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Attribute]&lt;has%20attribute%200..*-++[Protocol&#124;name:string%20%3F;description:string%20%3F;url:string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[ExperimentProcess]-%20has%20protocol%200..1&gt;[Protocol],[ExperimentProcess]-%20has%20protocol(i)%200..1&gt;[Protocol],[InformationContentEntity]^-[Protocol],[InformationContentEntity],[ExperimentProcess],[Attribute]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[SequencingProtocol],[Attribute]&lt;has%20attribute%200..*-++[Protocol&#124;name:string%20%3F;description:string%20%3F;url:string%20%3F;type:string%20%3F;xref:string%20*;id(i):string;accession(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[ExperimentProcess]++-%20has%20protocol%200..1&gt;[Protocol],[ExperimentProcess]-%20has%20protocol(i)%200..1&gt;[Protocol],[Protocol]^-[SequencingProtocol],[Protocol]^-[LibraryPreparationProtocol],[InformationContentEntity]^-[Protocol],[NamedThing],[LibraryPreparationProtocol],[InformationContentEntity],[ExperimentProcess],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[SequencingProtocol],[Attribute]&lt;has%20attribute%200..*-++[Protocol&#124;name:string%20%3F;description:string%20%3F;url:string%20%3F;type:string%20%3F;xref:string%20*;id(i):string;accession(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[ExperimentProcess]++-%20has%20protocol%200..1&gt;[Protocol],[ExperimentProcess]-%20has%20protocol(i)%200..1&gt;[Protocol],[Protocol]^-[SequencingProtocol],[Protocol]^-[LibraryPreparationProtocol],[InformationContentEntity]^-[Protocol],[NamedThing],[LibraryPreparationProtocol],[InformationContentEntity],[ExperimentProcess],[Attribute]" /></a></p>
 <h2 id="parents">Parents<a class="headerlink" href="#parents" title="Permanent link">&para;</a></h2>
 <ul>
 <li>is_a: <a href="../InformationContentEntity/">InformationContentEntity</a> - A generically dependent continuant that is about some thing.</li>
+</ul>
+<h2 id="children">Children<a class="headerlink" href="#children" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../LibraryPreparationProtocol/">LibraryPreparationProtocol</a> - Information about the library preparation of an Experiment.</li>
+<li><a href="../SequencingProtocol/">SequencingProtocol</a> - Information about the sequencing of a sample.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
 <ul>
@@ -373,7 +378,7 @@
 <h3 id="own">Own<a class="headerlink" href="#own" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="../protocol_name/">protocol➞name</a>  <sub>0..1</sub><ul>
-<li>Description: Name of the Protocol.</li>
+<li>Description: Name of the protocol (eg: Sample extraction_PCR amplification).</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
@@ -387,9 +392,14 @@
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../has_attribute/">has attribute</a>  <sub>0..*</sub><ul>
-<li>Description: Key/value pairs corresponding to an entity.</li>
-<li>Range: <a href="../Attribute/">Attribute</a></li>
+<li><a href="../protocol_type/">protocol➞type</a>  <sub>0..1</sub><ul>
+<li>Description: Type of the protocol (eg: Target enrichment).</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../protocol_xref/">protocol➞xref</a>  <sub>0..*</sub><ul>
+<li>Description: One or more cross-references for this Protocol.  (Eg: manufacturer protocol, protocol from publication etc )</li>
+<li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
 <li><a href="../protocol_has_attribute/">protocol➞has attribute</a>  <sub>0..*</sub><ul>
@@ -410,16 +420,6 @@
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../named_thing_xref/">named thing➞xref</a>  <sub>0..*</sub><ul>
-<li>Description: Holds one or more database cross references.</li>
-<li>Range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
-<li><a href="../named_thing_type/">named thing➞type</a>  <sub>0..1</sub><ul>
-<li>Description: The type of an entity.</li>
-<li>Range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
 <li><a href="../named_thing_creation_date/">named thing➞creation date</a>  <sub>0..1</sub><ul>
 <li>Description: Timestamp (in ISO 8601 format) when the entity was created.</li>
 <li>Range: <a href="../types/String/">String</a></li>
@@ -428,6 +428,16 @@
 <li><a href="../named_thing_update_date/">named thing➞update date</a>  <sub>0..1</sub><ul>
 <li>Description: Timestamp (in ISO 8601 format) when the entity was updated.</li>
 <li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../replaces/">replaces</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to a deprecated entity that is being replaced by the current entity.</li>
+<li>Range: <a href="../NamedThing/">NamedThing</a></li>
+</ul>
+</li>
+<li><a href="../replaced_by/">replaced by</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to the entity which replaces a currently deprecated entity.</li>
+<li>Range: <a href="../NamedThing/">NamedThing</a></li>
 </ul>
 </li>
 </ul>

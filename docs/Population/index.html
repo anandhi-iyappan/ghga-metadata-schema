@@ -359,7 +359,7 @@
                 <h1 id="class-population">Class: population<a class="headerlink" href="#class-population" title="Permanent link">&para;</a></h1>
 <p>A population is a collection of individuals from the same taxonomic class living, counted or sampled at a particular site or in a particular area.</p>
 <p>URI: <a href="https://w3id.org/GHGA/Population">GHGA:Population</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Population&#124;name:string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F]^-[Family],[Population]^-[Cohort],[MaterialEntity]^-[Population],[MaterialEntity],[Family],[Cohort],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Population&#124;name:string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F]^-[Family],[Population]^-[Cohort],[MaterialEntity]^-[Population],[MaterialEntity],[Family],[Cohort],[Attribute]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Population&#124;name:string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F]^-[Family],[Population]^-[Cohort],[MaterialEntity]^-[Population],[NamedThing],[MaterialEntity],[Family],[Cohort],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Population&#124;name:string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F]^-[Family],[Population]^-[Cohort],[MaterialEntity]^-[Population],[NamedThing],[MaterialEntity],[Family],[Cohort],[Attribute]" /></a></p>
 <h2 id="parents">Parents<a class="headerlink" href="#parents" title="Permanent link">&para;</a></h2>
 <ul>
 <li>is_a: <a href="../MaterialEntity/">MaterialEntity</a> - A material entity is a physical entity that is spatially extended, exists as a whole at any point in time and has mass.</li>
@@ -414,6 +414,16 @@
 <li><a href="../named_thing_update_date/">named thing➞update date</a>  <sub>0..1</sub><ul>
 <li>Description: Timestamp (in ISO 8601 format) when the entity was updated.</li>
 <li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../replaces/">replaces</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to a deprecated entity that is being replaced by the current entity.</li>
+<li>Range: <a href="../NamedThing/">NamedThing</a></li>
+</ul>
+</li>
+<li><a href="../replaced_by/">replaced by</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to the entity which replaces a currently deprecated entity.</li>
+<li>Range: <a href="../NamedThing/">NamedThing</a></li>
 </ul>
 </li>
 </ul>

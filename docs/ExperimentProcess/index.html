@@ -359,7 +359,7 @@
                 <h1 id="class-experiment-process">Class: experiment process<a class="headerlink" href="#class-experiment-process" title="Permanent link">&para;</a></h1>
 <p>An Experiment Process is a process that describes how a Sample is transformed to a File via an assay. The Experiment Process also keeps track of the Protocol used and the Agent that is running the experiment.</p>
 <p>URI: <a href="https://w3id.org/GHGA/ExperimentProcess">GHGA:ExperimentProcess</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Sample],[Protocol],[PlannedProcess],[File],[File]&lt;has%20output%200..1-%20[ExperimentProcess&#124;title:string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Agent]&lt;has%20agent%200..1-%20[ExperimentProcess],[Protocol]&lt;has%20protocol%200..1-%20[ExperimentProcess],[Sample]&lt;has%20input%200..1-%20[ExperimentProcess],[Experiment]-%20has%20experiment%20process%200..*&gt;[ExperimentProcess],[Experiment]-%20has%20experiment%20process(i)%200..1&gt;[ExperimentProcess],[PlannedProcess]^-[ExperimentProcess],[Experiment],[Attribute],[Agent]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Sample],[Protocol],[PlannedProcess],[File],[File]&lt;has%20output%200..1-%20[ExperimentProcess&#124;title:string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Agent]&lt;has%20agent%200..1-%20[ExperimentProcess],[Protocol]&lt;has%20protocol%200..1-%20[ExperimentProcess],[Sample]&lt;has%20input%200..1-%20[ExperimentProcess],[Experiment]-%20has%20experiment%20process%200..*&gt;[ExperimentProcess],[Experiment]-%20has%20experiment%20process(i)%200..1&gt;[ExperimentProcess],[PlannedProcess]^-[ExperimentProcess],[Experiment],[Attribute],[Agent]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Sample],[Protocol],[PlannedProcess],[NamedThing],[File],[File]&lt;has%20output%200..1-++[ExperimentProcess&#124;title:string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Agent]&lt;has%20agent%200..1-++[ExperimentProcess],[Protocol]&lt;has%20protocol%200..1-++[ExperimentProcess],[Sample]&lt;has%20input%200..1-++[ExperimentProcess],[Experiment]++-%20has%20experiment%20process%200..*&gt;[ExperimentProcess],[Experiment]-%20has%20experiment%20process(i)%200..1&gt;[ExperimentProcess],[PlannedProcess]^-[ExperimentProcess],[Experiment],[Attribute],[Agent]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Sample],[Protocol],[PlannedProcess],[NamedThing],[File],[File]&lt;has%20output%200..1-++[ExperimentProcess&#124;title:string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Agent]&lt;has%20agent%200..1-++[ExperimentProcess],[Protocol]&lt;has%20protocol%200..1-++[ExperimentProcess],[Sample]&lt;has%20input%200..1-++[ExperimentProcess],[Experiment]++-%20has%20experiment%20process%200..*&gt;[ExperimentProcess],[Experiment]-%20has%20experiment%20process(i)%200..1&gt;[ExperimentProcess],[PlannedProcess]^-[ExperimentProcess],[Experiment],[Attribute],[Agent]" /></a></p>
 <h2 id="parents">Parents<a class="headerlink" href="#parents" title="Permanent link">&para;</a></h2>
 <ul>
 <li>is_a: <a href="../PlannedProcess/">PlannedProcess</a> - A process is an entity that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity during the time it occurs.</li>
@@ -372,8 +372,8 @@
 <h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
 <h3 id="own">Own<a class="headerlink" href="#own" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="../title/">title</a>  <sub>0..1</sub><ul>
-<li>Description: The title that describes an entity.</li>
+<li><a href="../experiment_process_title/">experiment process➞title</a>  <sub>0..1</sub><ul>
+<li>Description: A descriptive title that explains the step(s) involved in performing the experiment leading up to the sequencing of the sample and generation of raw data from the instrument. (eg: Sample extraction -&gt; Target Enrichment) </li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
@@ -433,6 +433,16 @@
 <li><a href="../named_thing_update_date/">named thing➞update date</a>  <sub>0..1</sub><ul>
 <li>Description: Timestamp (in ISO 8601 format) when the entity was updated.</li>
 <li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../replaces/">replaces</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to a deprecated entity that is being replaced by the current entity.</li>
+<li>Range: <a href="../NamedThing/">NamedThing</a></li>
+</ul>
+</li>
+<li><a href="../replaced_by/">replaced by</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to the entity which replaces a currently deprecated entity.</li>
+<li>Range: <a href="../NamedThing/">NamedThing</a></li>
 </ul>
 </li>
 </ul>

@@ -359,22 +359,32 @@
                 <h1 id="class-project">Class: project<a class="headerlink" href="#class-project" title="Permanent link">&para;</a></h1>
 <p>Any specifically defined piece of work that is undertaken or attempted to meet a single requirement.</p>
 <p>URI: <a href="https://w3id.org/GHGA/Project">GHGA:Project</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[ResearchActivity],[Publication],[Attribute]&lt;has%20attribute%200..*-++[Project&#124;description:string%20%3F;title(i):string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Publication]&lt;has%20publication%200..*-%20[Project],[Experiment]&lt;has%20study%200..*-%20[Project],[ResearchActivity]^-[Project],[Experiment],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[ResearchActivity],[Publication],[Attribute]&lt;has%20attribute%200..*-++[Project&#124;description:string%20%3F;title(i):string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Publication]&lt;has%20publication%200..*-%20[Project],[Experiment]&lt;has%20study%200..*-%20[Project],[ResearchActivity]^-[Project],[Experiment],[Attribute]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Submission],[Study],[ResearchActivity],[Publication],[Attribute]&lt;has%20attribute%200..*-++[Project&#124;title:string;description:string;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Publication]&lt;has%20publication%200..*-++[Project],[Study]&lt;has%20study%200..*-++[Project],[Study]-%20has%20project(i)%200..1&gt;[Project],[Submission]-%20has%20project(i)%200..1&gt;[Project],[Study]++-%20has%20project%200..1&gt;[Project],[Submission]++-%20has%20project%200..1&gt;[Project],[ResearchActivity]^-[Project],[NamedThing],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Submission],[Study],[ResearchActivity],[Publication],[Attribute]&lt;has%20attribute%200..*-++[Project&#124;title:string;description:string;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Publication]&lt;has%20publication%200..*-++[Project],[Study]&lt;has%20study%200..*-++[Project],[Study]-%20has%20project(i)%200..1&gt;[Project],[Submission]-%20has%20project(i)%200..1&gt;[Project],[Study]++-%20has%20project%200..1&gt;[Project],[Submission]++-%20has%20project%200..1&gt;[Project],[ResearchActivity]^-[Project],[NamedThing],[Attribute]" /></a></p>
 <h2 id="parents">Parents<a class="headerlink" href="#parents" title="Permanent link">&para;</a></h2>
 <ul>
 <li>is_a: <a href="../ResearchActivity/">ResearchActivity</a> - A planned process executed in the performance of scientific research wherein systematic investigations are performed to establish facts and reach new conclusions about phenomena in the world.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>None</strong> <em><a href="../has_project/">has project</a></em>  <sub>0..1</sub>  <strong><a href="./">Project</a></strong></li>
+<li><strong><a href="../Study/">Study</a></strong> <em><a href="../study_has_project/">study➞has project</a></em>  <sub>0..1</sub>  <strong><a href="./">Project</a></strong></li>
+<li><strong><a href="../Submission/">Submission</a></strong> <em><a href="../submission_has_project/">submission➞has project</a></em>  <sub>0..1</sub>  <strong><a href="./">Project</a></strong></li>
+</ul>
 <h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
 <h3 id="own">Own<a class="headerlink" href="#own" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="../project_has_study/">project➞has study</a>  <sub>0..*</sub><ul>
 <li>Description: One or more Study entities associated with this Project.</li>
-<li>Range: <a href="../Experiment/">Experiment</a></li>
+<li>Range: <a href="../Study/">Study</a></li>
 </ul>
 </li>
-<li><a href="../project_description/">project➞description</a>  <sub>0..1</sub><ul>
-<li>Description: A detailed description about this Project.</li>
+<li><a href="../project_title/">project➞title</a>  <sub>1..1</sub><ul>
+<li>Description: Comprehensive title for the project.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../project_description/">project➞description</a>  <sub>1..1</sub><ul>
+<li>Description: Short textual description of the project   (Some information on the protocol, sample used and collected etc)  </li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
@@ -384,7 +394,7 @@
 </ul>
 </li>
 <li><a href="../project_has_attribute/">project➞has attribute</a>  <sub>0..*</sub><ul>
-<li>Description: Custom key/value pairs that further characterizes this Project.</li>
+<li>Description: Custom attributes for the Project  (eg: Cancer - Colon cancer, prostrate cancer, blood cancer etc)</li>
 <li>Range: <a href="../Attribute/">Attribute</a></li>
 </ul>
 </li>
@@ -421,9 +431,14 @@
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../title/">title</a>  <sub>0..1</sub><ul>
-<li>Description: The title that describes an entity.</li>
-<li>Range: <a href="../types/String/">String</a></li>
+<li><a href="../replaces/">replaces</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to a deprecated entity that is being replaced by the current entity.</li>
+<li>Range: <a href="../NamedThing/">NamedThing</a></li>
+</ul>
+</li>
+<li><a href="../replaced_by/">replaced by</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to the entity which replaces a currently deprecated entity.</li>
+<li>Range: <a href="../NamedThing/">NamedThing</a></li>
 </ul>
 </li>
 </ul>

@@ -359,7 +359,7 @@
                 <h1 id="class-experiment-dataset">Class: experiment dataset<a class="headerlink" href="#class-experiment-dataset" title="Permanent link">&para;</a></h1>
 <p>An Experiment Dataset is a collection of Files linked to one or more Experiments from one or more Studies.</p>
 <p>URI: <a href="https://w3id.org/GHGA/ExperimentDataset">GHGA:ExperimentDataset</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Publication],[File],[Experiment]&lt;has%20experiment%201..*-%20[ExperimentDataset&#124;title(i):string;description(i):string;type(i):string;id(i):string;accession(i):string%20%3F;xref(i):string%20*;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Study]&lt;has%20study%201..*-%20[ExperimentDataset],[DataAccessPolicy]&lt;has%20data%20access%20policy%201..*-%20[ExperimentDataset],[Dataset]^-[ExperimentDataset],[Experiment],[Dataset],[DataAccessPolicy],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Publication],[File],[Experiment]&lt;has%20experiment%201..*-%20[ExperimentDataset&#124;title(i):string;description(i):string;type(i):string;id(i):string;accession(i):string%20%3F;xref(i):string%20*;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Study]&lt;has%20study%201..*-%20[ExperimentDataset],[DataAccessPolicy]&lt;has%20data%20access%20policy%201..*-%20[ExperimentDataset],[Dataset]^-[ExperimentDataset],[Experiment],[Dataset],[DataAccessPolicy],[Attribute]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Publication],[NamedThing],[File],[Experiment]&lt;has%20experiment%201..*-++[ExperimentDataset&#124;title(i):string;description(i):string;status(i):status_enum%20%3F;type(i):string;id(i):string;accession(i):string%20%3F;xref(i):string%20*;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Study]&lt;has%20study%201..*-++[ExperimentDataset],[DataAccessPolicy]&lt;has%20data%20access%20policy%201..*-++[ExperimentDataset],[Dataset]^-[ExperimentDataset],[Experiment],[Dataset],[DataAccessPolicy],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Publication],[NamedThing],[File],[Experiment]&lt;has%20experiment%201..*-++[ExperimentDataset&#124;title(i):string;description(i):string;status(i):status_enum%20%3F;type(i):string;id(i):string;accession(i):string%20%3F;xref(i):string%20*;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Study]&lt;has%20study%201..*-++[ExperimentDataset],[DataAccessPolicy]&lt;has%20data%20access%20policy%201..*-++[ExperimentDataset],[Dataset]^-[ExperimentDataset],[Experiment],[Dataset],[DataAccessPolicy],[Attribute]" /></a></p>
 <h2 id="parents">Parents<a class="headerlink" href="#parents" title="Permanent link">&para;</a></h2>
 <ul>
 <li>is_a: <a href="../Dataset/">Dataset</a> - A Dataset is a collection of Files that is prepared for distribution.</li>
@@ -416,6 +416,16 @@
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
+<li><a href="../replaces/">replaces</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to a deprecated entity that is being replaced by the current entity.</li>
+<li>Range: <a href="../NamedThing/">NamedThing</a></li>
+</ul>
+</li>
+<li><a href="../replaced_by/">replaced by</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to the entity which replaces a currently deprecated entity.</li>
+<li>Range: <a href="../NamedThing/">NamedThing</a></li>
+</ul>
+</li>
 <li><a href="../dataset_title/">dataset➞title</a>  <sub>1..1</sub><ul>
 <li>Description: The title that describes an entity.</li>
 <li>Range: <a href="../types/String/">String</a></li>
@@ -434,6 +444,11 @@
 <li><a href="../dataset_has_publication/">dataset➞has publication</a>  <sub>0..*</sub><ul>
 <li>Description: One or more Publication entities associated with this Dataset.</li>
 <li>Range: <a href="../Publication/">Publication</a></li>
+</ul>
+</li>
+<li><a href="../dataset_status/">dataset➞status</a>  <sub>0..1</sub><ul>
+<li>Description: The status of an entity.</li>
+<li>Range: <a href="../status_enum/">status_enum</a></li>
 </ul>
 </li>
 <li><a href="../dataset_type/">dataset➞type</a>  <sub>1..1</sub><ul>

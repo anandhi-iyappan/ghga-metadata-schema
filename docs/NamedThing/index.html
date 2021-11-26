@@ -359,7 +359,7 @@
                 <h1 id="class-named-thing">Class: named thing<a class="headerlink" href="#class-named-thing" title="Permanent link">&para;</a></h1>
 <p>A databased entity, concept or class. This is a generic class that is the root of all the other classes.</p>
 <p>URI: <a href="https://w3id.org/GHGA/NamedThing">GHGA:NamedThing</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess],[Person],[Attribute]&lt;has%20attribute%200..*-++[NamedThing&#124;id:string;accession:string%20%3F;xref:string%20*;type:string%20%3F;creation_date:string%20%3F;update_date:string%20%3F],[NamedThing]^-[PlannedProcess],[NamedThing]^-[Person],[NamedThing]^-[MaterialEntity],[NamedThing]^-[InformationContentEntity],[NamedThing]^-[Committee],[NamedThing]^-[BiologicalQuality],[NamedThing]^-[Agent],[MaterialEntity],[InformationContentEntity],[Committee],[BiologicalQuality],[Attribute],[Agent]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess],[Person],[Attribute]&lt;has%20attribute%200..*-++[NamedThing&#124;id:string;accession:string%20%3F;xref:string%20*;type:string%20%3F;creation_date:string%20%3F;update_date:string%20%3F],[NamedThing]^-[PlannedProcess],[NamedThing]^-[Person],[NamedThing]^-[MaterialEntity],[NamedThing]^-[InformationContentEntity],[NamedThing]^-[Committee],[NamedThing]^-[BiologicalQuality],[NamedThing]^-[Agent],[MaterialEntity],[InformationContentEntity],[Committee],[BiologicalQuality],[Attribute],[Agent]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Submission],[PlannedProcess],[Person],[NamedThing]&lt;replaced%20by%200..1-%20[NamedThing&#124;id:string;accession:string%20%3F;xref:string%20*;type:string%20%3F;creation_date:string%20%3F;update_date:string%20%3F],[NamedThing]&lt;replaces%200..1-%20[NamedThing],[Attribute]&lt;has%20attribute%200..*-++[NamedThing],[Submission]-%20replaced%20by%200..1&gt;[NamedThing],[Submission]-%20replaces%200..1&gt;[NamedThing],[NamedThing]^-[PlannedProcess],[NamedThing]^-[Person],[NamedThing]^-[MaterialEntity],[NamedThing]^-[InformationContentEntity],[NamedThing]^-[Committee],[NamedThing]^-[BiologicalQuality],[NamedThing]^-[Agent],[MaterialEntity],[InformationContentEntity],[Committee],[BiologicalQuality],[Attribute],[Agent]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Submission],[PlannedProcess],[Person],[NamedThing]&lt;replaced%20by%200..1-%20[NamedThing&#124;id:string;accession:string%20%3F;xref:string%20*;type:string%20%3F;creation_date:string%20%3F;update_date:string%20%3F],[NamedThing]&lt;replaces%200..1-%20[NamedThing],[Attribute]&lt;has%20attribute%200..*-++[NamedThing],[Submission]-%20replaced%20by%200..1&gt;[NamedThing],[Submission]-%20replaces%200..1&gt;[NamedThing],[NamedThing]^-[PlannedProcess],[NamedThing]^-[Person],[NamedThing]^-[MaterialEntity],[NamedThing]^-[InformationContentEntity],[NamedThing]^-[Committee],[NamedThing]^-[BiologicalQuality],[NamedThing]^-[Agent],[MaterialEntity],[InformationContentEntity],[Committee],[BiologicalQuality],[Attribute],[Agent]" /></a></p>
 <h2 id="children">Children<a class="headerlink" href="#children" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../Agent/">Agent</a> - An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity. Agents include a Person, Organization, or Software that performs an activity.</li>
@@ -371,6 +371,12 @@
 <li><a href="../PlannedProcess/">PlannedProcess</a> - A process is an entity that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity during the time it occurs.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by Class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="./">NamedThing</a></strong> <em><a href="../replaced_by/">replaced by</a></em>  <sub>0..1</sub>  <strong><a href="./">NamedThing</a></strong></li>
+<li><strong><a href="./">NamedThing</a></strong> <em><a href="../replaces/">replaces</a></em>  <sub>0..1</sub>  <strong><a href="./">NamedThing</a></strong></li>
+<li><strong><a href="../Submission/">Submission</a></strong> <em><a href="../submission_replaced_by/">submission➞replaced by</a></em>  <sub>0..1</sub>  <strong><a href="./">NamedThing</a></strong></li>
+<li><strong><a href="../Submission/">Submission</a></strong> <em><a href="../submission_replaces/">submission➞replaces</a></em>  <sub>0..1</sub>  <strong><a href="./">NamedThing</a></strong></li>
+</ul>
 <h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
 <h3 id="own">Own<a class="headerlink" href="#own" title="Permanent link">&para;</a></h3>
 <ul>
@@ -407,6 +413,16 @@
 <li><a href="../named_thing_update_date/">named thing➞update date</a>  <sub>0..1</sub><ul>
 <li>Description: Timestamp (in ISO 8601 format) when the entity was updated.</li>
 <li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../replaces/">replaces</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to a deprecated entity that is being replaced by the current entity.</li>
+<li>Range: <a href="./">NamedThing</a></li>
+</ul>
+</li>
+<li><a href="../replaced_by/">replaced by</a>  <sub>0..1</sub><ul>
+<li>Description: Refers to the entity which replaces a currently deprecated entity.</li>
+<li>Range: <a href="./">NamedThing</a></li>
 </ul>
 </li>
 </ul>
