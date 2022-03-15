@@ -452,27 +452,41 @@ classes:
       to a File via an assay. The Experiment Process also keeps track of the Protocol
       used and the Agent that is running the experiment.
     slots:
+      - alias
       - title
       - has input
       - has protocol
       - has agent
       - has output
     slot_usage:
+      alias:
+        in_subset:
+          - optional
+          - restricted
       title:
         description: >-
           A descriptive title that explains the step(s) involved in performing the experiment
           leading up to the sequencing of the sample and generation of raw data from the instrument.
-          (eg: Sample extraction -> Target Enrichment) 
+          (eg: Sample extraction -> Target Enrichment)
+        in_subset:
+          - essential
+          - restricted
       has input:
         description: >-
           The input to the Experiment Process. Usually a Sample entity.
         range: sample
+        in_subset:
+          - optional
+          - restricted
         inlined: true
         inlined_as_list: false
       has protocol:
         description: >-
           The Protocol entity used by this Experiment Process.
         range: protocol
+        in_subset:
+          - essential
+          - restricted
         inlined: true
         inlined_as_list: false
       has agent:
@@ -480,6 +494,9 @@ classes:
           The Agent - a software, institution, or human - that is executing or
           responsible for executing the Experiment Process.
         range: agent
+        in_subset:
+          - optional
+          - restricted
         inlined: true
         inlined_as_list: false
       has output:
@@ -487,6 +504,9 @@ classes:
           The output of this Experiment Process. Usually a File entity.
         # TODO: what happens when we want to represent multiple samples via ExperimentProcess?
         range: file
+        in_subset:
+          - essential
+          - restricted
         inlined: true
         inlined_as_list: false
 
@@ -557,58 +577,16 @@ classes:
           - public
       library name:
         required: true
-        in_subset:
-          - essential
-          - public
       library layout:
         required: true
-        in_subset:
-          - essential
-          - public
       library type: 
         required: true
-        in_subset:
-          - essential
-          - public
       library selection:
         required: true
-        in_subset:
-          - essential
-          - public
       library preparation:
         required: true
-        in_subset:
-          - essential
-          - public
-      library level:
-        in_subset:
-          - recommended
-          - public
-      library preparation kit retail name:
-        in_subset:
-          - recommended
-          - public
-      library preparation kit manufacturer:
-        in_subset:
-          - recommended
-          - public
-      primer:
-        in_subset:
-          - recommended
-          - public
-      end_bias:
-        in_subset:
-          - recommended
-          - public
       target regions:
         required: true
-        in_subset:
-          - essential
-          - public
-      rnaseq strandedness:
-        in_subset:
-          - recommended
-          - public
       has attribute:
         description: >-
           One or more attributes that further characterizes this Library Preparation Protocol.
@@ -1844,7 +1822,7 @@ slots:
     description: The sequencing protocol associated with an entity.
 
   has library preparation protocol:
-    description: The Library Preparation Protocol associated with an entity.    
+    description: The Library Preparation Protocol associated with an entity.
 
   has technology:
     description: The technology associated with an entity.
@@ -1939,12 +1917,12 @@ slots:
 
   gender:
     description: >-
-       Identification as male/masculine, female/feminine or something else, 
+       Identification as male/masculine, female/feminine or something else,
        and association with a (social) role or set of behavioral and cultural traits.
 
   sex:
     description: >-
-      The assemblage of physical properties or qualities by which male is distinguished from female; 
+      The assemblage of physical properties or qualities by which male is distinguished from female;
       the physical difference between male and female; the distinguishing peculiarity of male or female.
     range: biological_sex_enum
 
@@ -1954,7 +1932,7 @@ slots:
 
   tissue:
     description: >- 
-      An anatomical structure consisting of similarly specialized cells and intercellular matrix, 
+      An anatomical structure consisting of similarly specialized cells and intercellular matrix,
       aggregated according to genetically determined spatial relationships, performing a specific function.
 
   isolation:
@@ -1979,13 +1957,13 @@ slots:
 
   vital status:
     description: >- 
-      The state or condition of being living or deceased; 
+      The state or condition of being living or deceased;
       also includes the case where the vital status is unknown.
     range: vital_status_enum
 
   ethnicity:
     description: >-
-      A social group characterized by a distinctive social and cultural tradition 
+      A social group characterized by a distinctive social and cultural tradition
       that is maintained from generation to generation.
     exact_mappings:
       - SIO:001014
@@ -2014,10 +1992,10 @@ slots:
 
   checksum:
     description: >-
-      A computed value which depends on the contents of a block of data and which is transmitted or 
+      A computed value which depends on the contents of a block of data and which is transmitted or
       stored along with the data in order to detect corruption of the data. 
-      The receiving system recomputes the checksum based upon the received data and compares this 
-      value with the one sent with the data. If the two values are the same, the receiver has some confidence 
+      The receiving system recomputes the checksum based upon the received data and compares this
+      value with the one sent with the data. If the two values are the same, the receiver has some confidence
       that the data was received correctly.
     exact_mappings:
       - NCIT:C43522
@@ -2090,41 +2068,65 @@ slots:
 
   library name:
     description: >- 
-      A short name identifying the library to potential users. 
+      A short name identifying the library to potential users.
       The same name may refer to multiple versions of the same continually updated library.
+    in_subset:
+      - essential
+      - public
   
   library layout:
     description: >-
       Describe whether the library was sequenced in single-end (forward or reverse) or paired-end mode
     exact_mappings:
       - NCIT:C175894
+    in_subset:
+      - essential
+      - public
 
   library type:
     description: >-
-      Describe the level of omics analysis (eg: Metagenome, transcriptome, etc) 
+      Describe the level of omics analysis (eg: Metagenome, transcriptome, etc)
+    in_subset:
+      - essential
+      - public
 
   library selection:
     description: >-
         Whether any method was used to select for or against, enrich, or screen the material being sequenced.
         Library Selection method (e.g. random, PCA, cDNA, etc )
+    in_subset:
+      - essential
+      - public
 
   library preparation:
     description: >-
       The general method for sequencing library preparation (e.g. KAPA PCR-free).
+    in_subset:
+      - essential
+      - public
 
   library level:
     description: >-
       Single Cell Sequencing or Bulk Sequencing
+    in_subset:
+      - recommended
+      - public
 
   library preparation kit retail name:
     description: >-
-      A unique identifier for the kit used to construct a genomic library. 
+      A unique identifier for the kit used to construct a genomic library.
       This may include the vendor name, kit name and kit version 
       (e.g. Agilent sure select Human Exome V8, Twist RefSeq Exome, etc.)
+    in_subset:
+      - recommended
+      - public
 
   library preparation kit manufacturer:
     description: >-
       Manufacturer of library preparation kit
+    in_subset:
+      - recommended
+      - public
 
   primer:
     description: >-
@@ -2132,22 +2134,34 @@ slots:
       This allows users to identify content of the cDNA library input e.g. enriched for mRNA.
     exact_mappings:
       - EFO:0010192
+    in_subset:
+      - recommended
+      - public
 
   end bias:
     description: >-
-      The end of the cDNA molecule that is preferentially sequenced, 
+      The end of the cDNA molecule that is preferentially sequenced,
       e.g. 3/5 prime tag or end, or the full-length transcript.
     exact_mappings:
       - EFO:0010187
+    in_subset:
+      - recommended
+      - public
 
   target regions:
     description: >-
-      Subset of genes or specific regions of the genome, which are most likely to be involved in the phenotype under study. 
+      Subset of genes or specific regions of the genome, which are most likely to be involved in the phenotype under study.
+    in_subset:
+      - essential
+      - public
 
   rnaseq strandedness:
     description: >-
-      The strandedness of the library, whether reads come from both strands of the cDNA 
+      The strandedness of the library, whether reads come from both strands of the cDNA
       or only from the first (antisense) or the second (sense) strand.
+    in_subset:
+      - recommended
+      - public
   
   sequencing center: 
     description: >-
@@ -2163,7 +2177,7 @@ slots:
   read length:
     description: >-
       Length of sequencing reads (eg: Long or short or actual number of the read length etc).
-      The number of nucleotides successfully ordered from each side of a nucleic acid fragment 
+      The number of nucleotides successfully ordered from each side of a nucleic acid fragment
       obtained after the completion of a sequencing process
   
   sequencing length:  
@@ -2375,7 +2389,7 @@ enums:
       epigenetics:
         description: Epigenetics
       synthetic_genomics:
-        description: Sythetic Genomics 
+        description: Sythetic Genomics
       forensic_paleo_genomics:
         description: Forensic or Paleo-genomics
       gene_regulation:
@@ -2391,27 +2405,27 @@ enums:
       pooled_clone_sequencing:
         description: Pooled Clone Sequencing
       other:
-        description: Other study 
+        description: Other study
 
   file_type_enum:
     description: >-
       Enum to capture file types.
     permissible_values:
       bam: 
-        description: BAM File 
+        description: BAM File
       complete_genomics:
-        description: Complete Genomics File 
+        description: Complete Genomics File
       cram: 
-        description: CRAM File 
+        description: CRAM File
       fasta:
-        description: Fasta File 
+        description: Fasta File
       fastq:
-        description: FastQ File 
+        description: FastQ File
       pacbio_hdf5:
-        description: PacBio HDF5 File 
+        description: PacBio HDF5 File
       sff:
         description: >- 
-          Standard flowgram format used to encode results 
+          Standard flowgram format used to encode results
           of pyrosequencing from the 454 Life Sciences platform.
       srf:
         description: >-
