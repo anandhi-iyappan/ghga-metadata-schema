@@ -28,6 +28,18 @@ subsets:
   restricted:
     description: >-
       Subset of properties that are considered to be restricted.
+  public:
+    description: >-
+      Subset of properties that are considered to be public. 
+  essential:
+    description: >-
+      Subset of properties that are considered to be essential for the funtionality of GHGA.
+  recommended:
+    description: >-
+      Subset of properties that are considered to be required for FAIR data sharing.
+  optional:
+    description: >-
+      Subset of properties that are considered to be optional.
 
 classes:
 
@@ -210,7 +222,7 @@ classes:
       description:
         description: >-
           Short textual description of the project  
-          (Some information on the protocol, sample used and collected etc)  
+          (Some information on the protocol, sample used and collected etc)
         required: true
         exact_mappings:
           - NCIT:C25365
@@ -466,11 +478,10 @@ classes:
       - library layout
       - library type
       - library selection
-      - library construction
       - library preparation
       - library level
-      - library construction kit retail name
-      - library construction kit manufacturer
+      - library preparation kit retail name
+      - library preparation kit manufacturer
       - primer
       - end bias 
       - target regions
@@ -482,7 +493,7 @@ classes:
         required: true
       description:
         description: >-
-          Description about how a sequencing library was prepared (eg: Library construction method).
+          Description about how a sequencing library was prepared (eg: Library preparation method).
         required: true
       library name:
         required: true
@@ -492,13 +503,11 @@ classes:
         required: true 
       library selection:
         required: true
-      library construction:
-        required: true
       library preparation:
         required: true
-      library construction kit retail name:
+      library preparation kit retail name:
         required: true
-      library construction kit manufacturer:
+      library preparation kit manufacturer:
         required: true
       has attribute:
         description: >-
@@ -1782,27 +1791,23 @@ slots:
         Whether any method was used to select for or against, enrich, or screen the material being sequenced.
         Library Selection method (e.g. random, PCA, cDNA, etc )
 
-  library construction:
-    description: >-
-      The name of a library construction approach being used. (eg: '10X v2 sequencing' or 'Smart-seq2')
-
   library preparation:
     description: >-
-      The general method for sequencing library construction (e.g. KAPA PCR-free).
+      The general method for sequencing library preparation (e.g. KAPA PCR-free).
 
   library level:
     description: >-
       Single Cell Sequencing or Bulk Sequencing
 
-  library construction kit retail name:
+  library preparation kit retail name:
     description: >-
       A unique identifier for the kit used to construct a genomic library. 
       This may include the vendor name, kit name and kit version 
       (e.g. Agilent sure select Human Exome V8, Twist RefSeq Exome, etc.)
 
-  library construction kit manufacturer:
+  library preparation kit manufacturer:
     description: >-
-      Manufacturer of library construction kit
+      Manufacturer of library preparation kit
 
   primer:
     description: >-
