@@ -169,8 +169,6 @@ classes:
     exact_mappings:
       - SIO:000747
       - OBI:0000066
-    close_mappings:
-      - NCIT:C15429
 
   data transformation:
     is_a: planned process
@@ -195,8 +193,6 @@ classes:
       - description
     exact_mappings:
       - SEPIO:0000004
-    close_mappings:
-      - NCIT:C15429
 
   project:
     is_a: research activity
@@ -206,8 +202,6 @@ classes:
     description: >-
       Any specifically defined piece of work that is undertaken or attempted to meet
       a single requirement.
-    close_mappings:
-      - NCIT:C47885
     slot_usage:
       title:
         description: >-
@@ -265,8 +259,6 @@ classes:
           The type of Study. For example, 'Cancer Genomics', 'Epigenetics', 'Exome Sequencing'.
         range: study_type_enum
         required: true
-        broad_mappings:
-          - NCIT:C142175
       affiliation:
         required: true
         multivalued: true
@@ -312,8 +304,6 @@ classes:
       falsifying, or establishing the validity of a hypothesis.
     exact_mappings:
       - SIO:000994
-    close_mappings:
-      - NCIT:C42790
     slots:
       - biological replicates
       - technical replicates
@@ -446,8 +436,6 @@ classes:
       - url
     exact_mappings:
       - OBI:0000272
-    close_mappings:
-      - NCIT:C41111
     slot_usage:
       name:
         description: >-
@@ -637,8 +625,6 @@ classes:
         range: anatomical entity
         inlined: true
         inlined_as_list: false
-        broad_mappings:
-          - EFO:0000635
       has disease:
         description: >-
           The Disease entity that is associated with the Individual. Typically, a concept
@@ -1272,8 +1258,6 @@ classes:
       - HP:0000118
       - EFO:0000651
       - SIO:010056
-    close_mappings:
-      - NCIT:C16977
 
   user:
     is_a: person
@@ -1486,8 +1470,6 @@ slots:
     description: >-
       The study abstract that describes the goals. 
       Can also hold abstract from a publication related to this study
-    close_mappings:
-      - NCIT:C60765
 
   technical replicates:
     description: Number of replicate samples (technical replicates).
@@ -1615,8 +1597,6 @@ slots:
     description: >- 
       The geographical region where the Individual is located.
       Any demarcated area of the Earth; may be determined by both natural and human boundaries.
-    close_mappings:
-      - NCIT:C16632
 
   has disease:
     description: Disease concept that the entity is associated with.
@@ -1653,47 +1633,33 @@ slots:
     description: >-
        Identification as male/masculine, female/feminine or something else, 
        and association with a (social) role or set of behavioral and cultural traits.
-    close_mappings:
-      - NCIT:C17357
 
   sex:
     description: >-
       The assemblage of physical properties or qualities by which male is distinguished from female; 
       the physical difference between male and female; the distinguishing peculiarity of male or female.
     range: biological_sex_enum
-    close_mappings:
-      - NCIT:C28421
 
   age:
     description: Age of an individual.
     range: integer
-    close_mappings:
-      - EFO:0000246
 
   tissue:
     description: >- 
       An anatomical structure consisting of similarly specialized cells and intercellular matrix, 
       aggregated according to genetically determined spatial relationships, performing a specific function.
-    close_mappings:
-      - NCIT:C12801
 
   isolation:
     description: >-
       Method or device employed for collecting/isolating a biospecimen or a sample.
-    close_mappings:
-      - NCIT:C25549
 
   storage:
     description: >-
       Methods by which a biospecimen or a sample is stored
       (e.g. frozen in liquid nitrogen).
-    close_mappings:
-      - NCIT:C60824
 
   year of birth:
     description: The year in which the individual was born.
-    close_mappings:
-      - NCIT:C83164
     in_subset:
       - restricted
 
@@ -1702,8 +1668,6 @@ slots:
       The state or condition of being living or deceased; 
       also includes the case where the vital status is unknown.
     range: vital_status_enum
-    close_mappings:
-      - NCIT:C25717
 
   ethnicity:
     description: >-
@@ -1717,8 +1681,6 @@ slots:
   ancestry:
     description: >-
       A person's descent or lineage, from a person or from a population.
-    close_mappings: 
-      - NCIT:C176763
     in_subset:
       - restricted
 
@@ -1776,8 +1738,6 @@ slots:
   telephone:
     description: >-
       The telephone number associated with a person.
-    close_mappings:
-      - NCIT:C40978
 
   organization:
     description: The organization associated with a person.
@@ -1785,8 +1745,6 @@ slots:
   email:
     description: >-
       Email of a person.
-    close_mappings:
-      - NCIT:C42775
 
   key:
     description: The key of an attribute.
@@ -1803,8 +1761,6 @@ slots:
   affiliation:
     description: >-
       Institutions associated with this study.
-    close_mappings:
-      - NCIT:C25412
 
   library name:
     description: >- 
@@ -1825,20 +1781,14 @@ slots:
     description: >-
         Whether any method was used to select for or against, enrich, or screen the material being sequenced.
         Library Selection method (e.g. random, PCA, cDNA, etc )
-    close_mappings:
-      - GENEPIO:0001940
 
   library construction:
     description: >-
       The name of a library construction approach being used. (eg: '10X v2 sequencing' or 'Smart-seq2')
-    close_mappings:
-      - OBI:0000711
 
   library preparation:
     description: >-
       The general method for sequencing library construction (e.g. KAPA PCR-free).
-    close_mappings:
-      - OBI:0000711
 
   library level:
     description: >-
@@ -1849,8 +1799,6 @@ slots:
       A unique identifier for the kit used to construct a genomic library. 
       This may include the vendor name, kit name and kit version 
       (e.g. Agilent sure select Human Exome V8, Twist RefSeq Exome, etc.)
-    broad_mappings:
-      - NCIT:C177583
 
   library construction kit manufacturer:
     description: >-
@@ -1860,8 +1808,6 @@ slots:
     description: >-
       The type of primer used for reverse transcription, e.g. 'oligo-dT' or 'random' primer.
       This allows users to identify content of the cDNA library input e.g. enriched for mRNA.
-    broad_mappings:
-      - NCIT:C1451
     exact_mappings:
       - EFO:0010192
 
@@ -1875,21 +1821,15 @@ slots:
   target regions:
     description: >-
       Subset of genes or specific regions of the genome, which are most likely to be involved in the phenotype under study. 
-    broad_mappings:
-      - NCIT:C130177
 
   rnaseq strandedness:
     description: >-
       The strandedness of the library, whether reads come from both strands of the cDNA 
       or only from the first (antisense) or the second (sense) strand.
-    broad_mappings:
-      - NCIT:C48673
   
   sequencing center: 
     description: >-
       Center where sample was sequenced.
-    close_mappings:
-      - GENEPIO:0000070
 
   instrument model:
     description: >-
@@ -1900,8 +1840,6 @@ slots:
       Length of sequencing reads (eg: Long or short or actual number of the read length etc).
       The number of nucleotides successfully ordered from each side of a nucleic acid fragment 
       obtained after the completion of a sequencing process
-    close_mappings:
-      - NCIT:C153362
   
   sequencing length:  
     description: >-
@@ -1911,35 +1849,25 @@ slots:
     description: >-
       Denotes whether a submitted FASTQ file contains forward (R1) or reverse (R2) reads for paired-end sequencing.
       The number that identifies each read direction in a paired-end nucleotide sequencing replications.
-    close_mappings:
-      - NCIT:C172300
 
   reference annotation:
     description: >-
       A published genetic sequence that is used as a reference sequence against which other sequences are compared.
       Reference genome(s) or annotation(s) used for prior analyses (eg: GRCh38.p13).
-    close_mappings:
-      - NCIT:C164388
   
   lane number:
     description: >-
       he numerical identifier for the lane or machine unit where a sample was located during nucleotide sequencing.
-    close_mappings:
-      - NCIT:C182081
 
   target coverage:
     description: >-
       Mean coverage for whole genome sequencing, or mean target coverage for whole exome and targeted sequencing.
       The number of times a particular locus (site, nucleotide, amplicon, region) was sequenced.
-    close_mappings:
-      - NCIT:C155320
 
   flow cell id:
     description: >-
       Flow Cell ID (eg: Experiment ID_Cell 1_Lane_1).
       The barcode assigned to a flow cell used in nucleotide sequencing.
-    close_mappings:
-      - NCIT:C181843
 
   flow cell type:
     description: >-
@@ -1947,56 +1875,38 @@ slots:
       Aparatus in the fluidic subsystem where the sheath and sample meet. 
       Can be one of several types; jet-in-air, quartz cuvette, or a hybrid of the two. 
       The sample flows through the center of a fluid column of sheath fluid in the flow cell.
-    close_mappings:
-      - OBI:0400043
 
   umi barcode read:
     description: >-
       The type of read that contains the UMI barcode (Eg: index1/index2/read1/read2).
-    close_mappings:
-      - EFO:0010208
   
   umi barcode offset:
     description: >-
       The offset in sequence of the UMI identifying barcode. (E.g. '16').
-    close_mappings:
-      - EFO:0010207
 
   umi barcode size: 
     description: >-
       The size of the UMI identifying barcode (Eg. '10').
-    close_mappings:
-      - EFO:0010209
 
   cell barcode read: 
     description: >-
       The type of read that contains the cell barcode (eg: index1/index2/read1/read2).
-    close_mappings:
-      - EFO:0010203
 
   cell barcode offset: 
     description: >-
       The offset in sequence of the cell identifying barcode. (Eg. '0').
-    close_mappings:
-      - EFO:0010204
 
   cell barcode size: 
     description: >-
       The size of the cell identifying barcode (E.g. '16').
-    close_mappings:
-      - EFO:0010205
 
   sample barcode read: 
     description: >-
       The type of read that contains the sample barcode (eg: index1/index2/read1/read2).
-    close_mappings:
-      - EFO:0010210
 
   vital status at sampling:
     description: >-
       Vital Status of an Individual at the point of sampling (eg:'Alive', 'Deceased').
-    close_mappings:
-      - NCIT:C25717
 
   submission date:
     description: >-
