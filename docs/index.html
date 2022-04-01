@@ -9,15 +9,15 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
     
     
       
-        <title>Documentation - GHGA Metadata Schema</title>
+        <title>Schema Documentation - GHGA Metadata Schema</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.bb3983ee.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.644de097.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
@@ -32,8 +32,9 @@
     
       
         
+        
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tilium+Web:300,400,400i,700%7CCourier+Prime&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tilium+Web:300,300i,400,400i,700,700i%7CCourier+Prime:400,400i,700,700i&display=fallback">
         <style>:root{--md-text-font:"Tilium Web";--md-code-font:"Courier Prime"}</style>
       
     
@@ -62,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ghga-metadata-schema-schema" class="md-skip">
+        <a href="#ghga-metadata-schema" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Documentation
+              Schema Documentation
             
           </span>
         </div>
@@ -139,10 +140,10 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/ghga-de/ghga-metadata-schema/" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/ghga-de/ghga-metadata-schema" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"/></svg>
   </div>
   <div class="md-source__repository">
     ghga-de/ghga-metadata-schema
@@ -186,10 +187,10 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/ghga-de/ghga-metadata-schema/" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/ghga-de/ghga-metadata-schema" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"/></svg>
   </div>
   <div class="md-source__repository">
     ghga-de/ghga-metadata-schema
@@ -232,12 +233,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Documentation
+          Schema Documentation
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Documentation
+        Schema Documentation
       </a>
       
         
@@ -321,6 +322,21 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../derived-schemas/" class="md-nav__link">
+        Derived Schemas
+      </a>
     </li>
   
 
@@ -447,16 +463,15 @@
 </a>
 
 
-<h1 id="ghga-metadata-schema-schema">GHGA-Metadata-Schema schema<a class="headerlink" href="#ghga-metadata-schema-schema" title="Permanent link">&para;</a></h1>
+
+<h1 id="ghga-metadata-schema">GHGA-Metadata-Schema<a class="headerlink" href="#ghga-metadata-schema" title="Permanent link">&para;</a></h1>
+<p><strong>metamodel version:</strong> 1.7.0</p>
+<p><strong>version:</strong> 0.5.0</p>
 <p>The metadata schema for the German Human Genome-Phenome Archive (GHGA).</p>
 <h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="AccessionMixin/">AccessionMixin</a> - Mixin for entities that can be assigned a GHGA accession.</li>
 <li><a href="Attribute/">Attribute</a> - A key/value pair that further characterizes an entity.</li>
-<li><a href="AttributeMixin/">AttributeMixin</a> - Mixin for entities that can have one or more attributes.</li>
 <li><a href="DataUseCondition/">DataUseCondition</a> - Data Use Condition represents the use conditions associated with a Dataset. A permission field can have one or more terms that collectively defines the data use condition. The modifier determines the interpretation of the use permission(s).</li>
-<li><a href="DeprecatedMixin/">DeprecatedMixin</a> - Mixin for entities that can be deprecated.</li>
-<li><a href="EgaAccessionMixin/">EgaAccessionMixin</a> - Mixin for entities that can be assigned an EGA accession, in addition to GHGA accession.</li>
 <li><a href="NamedThing/">NamedThing</a> - A databased entity, concept or class. This is a generic class that is the root of all the other classes.<ul>
 <li><a href="Agent/">Agent</a> - An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity. Agents include a Person, Organization, or Software that performs an activity.</li>
 <li><a href="BiologicalQuality/">BiologicalQuality</a> - A biological quality is a quality held by a biological entity.<ul>
@@ -527,22 +542,28 @@
 </li>
 </ul>
 </li>
-<li><a href="OntologyClassMixin/">OntologyClassMixin</a> - Mixin for entities that represent an class/term/concept from an ontology.</li>
-<li><a href="PublicationMixin/">PublicationMixin</a> - Mixin for entities that can have one or more publications.</li>
-<li><a href="ReleaseMixin/">ReleaseMixin</a> - Mixin for entities that can be released at a later point in time.</li>
-<li><a href="StatusMixin/">StatusMixin</a> - Mixin for entities that can have a status.</li>
 <li><a href="Submission/">Submission</a> - A grouping entity that represents information about one or more entities. A submission can be considered as a set of inter-related (and inter-connected) entities that represent a data submission to GHGA.</li>
 <li><a href="WorkflowParameter/">WorkflowParameter</a> - A key/value pair that represents a parameter used in a Workflow Step.</li>
 </ul>
 <h3 id="mixins">Mixins<a class="headerlink" href="#mixins" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="AccessionMixin/">AccessionMixin</a> - Mixin for entities that can be assigned a GHGA accession.</li>
+<li><a href="AttributeMixin/">AttributeMixin</a> - Mixin for entities that can have one or more attributes.</li>
+<li><a href="DeprecatedMixin/">DeprecatedMixin</a> - Mixin for entities that can be deprecated.</li>
+<li><a href="EgaAccessionMixin/">EgaAccessionMixin</a> - Mixin for entities that can be assigned an EGA accession, in addition to GHGA accession.</li>
+<li><a href="MetadataMixin/">MetadataMixin</a> - Mixin for tracking schema specific metadata about an instance.</li>
+<li><a href="OntologyClassMixin/">OntologyClassMixin</a> - Mixin for entities that represent an class/term/concept from an ontology.</li>
+<li><a href="PublicationMixin/">PublicationMixin</a> - Mixin for entities that can have one or more publications.</li>
+<li><a href="ReleaseStatusMixin/">ReleaseStatusMixin</a> - Mixin for entities that can be released at a later point in time.</li>
+</ul>
 <h3 id="slots">Slots<a class="headerlink" href="#slots" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="abstract/">abstract</a> - The study abstract that describes the goals.  Can also hold abstract from a publication related to this study</li>
-<li><a href="accession/">accession</a> - A unique GHGA identifier assigned to an entity for the sole purpose of referring to that entity in a global scope.</li>
-<li><a href="additional_name/">additional name</a> - Additional name(s).<ul>
-<li><a href="individual_additional_name/">individual➞additional name</a></li>
+<li><a href="abstract/">abstract</a> - The study abstract that describes the goals.  Can also hold abstract from a publication related to this study<ul>
+<li><a href="publication_abstract/">publication➞abstract</a> - The study abstract that describes the goals. Can also hold abstract from a publication related to this study.</li>
 </ul>
 </li>
+<li><a href="accession/">accession</a> - A unique GHGA identifier assigned to an entity for the sole purpose of referring to that entity in a global scope.</li>
+<li><a href="additional_name/">additional name</a> - Additional name(s).</li>
 <li><a href="affiliation/">affiliation</a> - Institutions associated with this study.<ul>
 <li><a href="study_affiliation/">study➞affiliation</a></li>
 </ul>
@@ -552,22 +573,35 @@
 </ul>
 </li>
 <li><a href="alias/">alias</a> - The alias for an entity.<ul>
-<li><a href="named_thing_alias/">named thing➞alias</a> - The alias (alternate identifier) for an entity.</li>
+<li><a href="named_thing_alias/">named thing➞alias</a> - The alias (alternate identifier) for an entity.<ul>
+<li><a href="analysis_alias/">analysis➞alias</a> - An alias uniquely identifying this Analysis entitiy.</li>
+<li><a href="data_access_committee_alias/">data access committee➞alias</a> - The alias for an entity.</li>
+<li><a href="data_access_policy_alias/">data access policy➞alias</a> - The alias for an entity.</li>
+<li><a href="dataset_alias/">dataset➞alias</a> - The alias for an entity.</li>
+<li><a href="experiment_alias/">experiment➞alias</a> - The alias for an entity.</li>
+<li><a href="file_alias/">file➞alias</a> - The alias for an entity.</li>
+<li><a href="individual_alias/">individual➞alias</a> - The alias for an entity.</li>
+<li><a href="project_alias/">project➞alias</a> - The alias for an entity.</li>
+<li><a href="sample_alias/">sample➞alias</a> - The alias for an entity.</li>
+<li><a href="study_alias/">study➞alias</a> - The alias for an entity.</li>
 </ul>
 </li>
-<li><a href="ancestry/">ancestry</a> - A person's descent or lineage, from a person or from a population.<ul>
-<li><a href="individual_ancestry/">individual➞ancestry</a></li>
 </ul>
 </li>
-<li><a href="biological_replicates/">biological replicates</a> - Number of independent samples (biological replicates).<ul>
-<li><a href="experiment_biological_replicates/">experiment➞biological replicates</a> - A biological replicate is a replicate role that consists of  independent biological replicates made from different individual biosamples.</li>
-</ul>
-</li>
+<li><a href="ancestry/">ancestry</a> - A person's descent or lineage, from a person or from a population. Typically this is a value from HANCESTRO (Human Ancestry Ontology).</li>
+<li><a href="biological_replicates/">biological replicates</a> - A biological replicate is a replicate role that consists of independent biological replicates made from different individual biosamples.</li>
 <li><a href="category/">category</a> - The category for this file: Whole Genome Sequencing, Whole Exome Sequencing, etc.</li>
 <li><a href="cell_barcode_offset/">cell barcode offset</a> - The offset in sequence of the cell identifying barcode. (Eg. '0').</li>
 <li><a href="cell_barcode_read/">cell barcode read</a> - The type of read that contains the cell barcode (eg: index1/index2/read1/read2).</li>
 <li><a href="cell_barcode_size/">cell barcode size</a> - The size of the cell identifying barcode (E.g. '16').</li>
-<li><a href="checksum/">checksum</a> - A computed value which depends on the contents of a block of data and which is transmitted or  stored along with the data in order to detect corruption of the data.  The receiving system recomputes the checksum based upon the received data and compares this  value with the one sent with the data. If the two values are the same, the receiver has some confidence  that the data was received correctly.</li>
+<li><a href="checksum/">checksum</a> - A computed value which depends on the contents of a block of data and which is transmitted or stored along with the data in order to detect corruption of the data. The receiving system recomputes the checksum based upon the received data and compares this value with the one sent with the data. If the two values are the same, the receiver has some confidence that the data was received correctly.<ul>
+<li><a href="file_checksum/">file➞checksum</a></li>
+</ul>
+</li>
+<li><a href="checksum_type/">checksum type</a> - The type of algorithm used to generate the checksum of a file.<ul>
+<li><a href="file_checksum_type/">file➞checksum type</a></li>
+</ul>
+</li>
 <li><a href="creation_date/">creation date</a> - Timestamp (in ISO 8601 format) when the entity was created.<ul>
 <li><a href="named_thing_creation_date/">named thing➞creation date</a></li>
 <li><a href="submission_creation_date/">submission➞creation date</a> - Timestamp (in ISO 8601 format) when the Submission was created.</li>
@@ -575,17 +609,19 @@
 </li>
 <li><a href="deprecation_date/">deprecation date</a> - The timestamp (in ISO 8601 format) when the entity was deprecated.</li>
 <li><a href="description/">description</a> - Description of an entity.<ul>
+<li><a href="analysis_description/">analysis➞description</a> - Describing how an Analysis was carried out. (e.g.: computational tools, settings, etc.).</li>
+<li><a href="data_access_committee_description/">data access committee➞description</a> - A description for the Data Access Committee.</li>
 <li><a href="data_access_policy_description/">data access policy➞description</a> - A short description for the Data Access Policy.</li>
 <li><a href="dataset_description/">dataset➞description</a></li>
 <li><a href="experiment_description/">experiment➞description</a> - A detailed description of the Experiment.</li>
 <li><a href="ontology_class_mixin_description/">ontology class mixin➞description</a> - The description or definition of an ontology class.</li>
-<li><a href="project_description/">project➞description</a> - Short textual description of the project   (Some information on the protocol, sample used and collected etc)  </li>
+<li><a href="project_description/">project➞description</a> - Short textual description of the project (Some information on the protocol, sample used and collected etc)</li>
 <li><a href="protocol_description/">protocol➞description</a> - Detailed description of the Protocol.<ul>
 <li><a href="library_preparation_protocol_description/">library preparation protocol➞description</a> - Description about how a sequencing library was prepared (eg: Library construction method).</li>
 <li><a href="sequencing_protocol_description/">sequencing protocol➞description</a> - Description about the sequencing protocol (eg: mRNA-seq,Whole exome long-read sequencing etc).</li>
 </ul>
 </li>
-<li><a href="sample_description/">sample➞description</a> - Short textual description of the sample   (How the sample was collected, sample source,  protocol followed for processing the sample etc).</li>
+<li><a href="sample_description/">sample➞description</a> - Short textual description of the sample (How the sample was collected, sample source, protocol followed for processing the sample etc).</li>
 <li><a href="study_description/">study➞description</a> - A detailed description (abstract) that describes the goals of this Study.</li>
 </ul>
 </li>
@@ -594,35 +630,17 @@
 <li><a href="member_email/">member➞email</a> - The email of the Member.</li>
 </ul>
 </li>
-<li><a href="end_bias/">end bias</a> - The end of the cDNA molecule that is preferentially sequenced,  e.g. 3/5 prime tag or end, or the full-length transcript.</li>
-<li><a href="ethnicity/">ethnicity</a> - A social group characterized by a distinctive social and cultural tradition  that is maintained from generation to generation.<ul>
-<li><a href="individual_ethnicity/">individual➞ethnicity</a></li>
-</ul>
-</li>
-<li><a href="experimental_replicates/">experimental replicates</a> - Number of experiment replications.<ul>
-<li><a href="experiment_experimental_replicates/">experiment➞experimental replicates</a> - The replicate number of the assay, i.e. the numeric iteration  for the assay that was repeated.</li>
-</ul>
-</li>
-<li><a href="family_name/">family name</a> - Last name.<ul>
-<li><a href="individual_family_name/">individual➞family name</a></li>
-</ul>
-</li>
-<li><a href="file_index/">file index</a> - The index for this file. Commonly for BAM/VCF files.</li>
+<li><a href="end_bias/">end bias</a> - The end of the cDNA molecule that is preferentially sequenced, e.g. 3/5 prime tag or end, or the full-length transcript.</li>
+<li><a href="experimental_replicates/">experimental replicates</a> - The replicate number of the assay, i.e. the numeric iteration for the assay that was repeated.</li>
+<li><a href="family_name/">family name</a> - Last name.</li>
 <li><a href="flow_cell_id/">flow cell id</a> - Flow Cell ID (eg: Experiment ID_Cell 1_Lane_1). The barcode assigned to a flow cell used in nucleotide sequencing.</li>
-<li><a href="flow_cell_type/">flow cell type</a> - Type of flow cell used (e.g. S4, S2 for NovaSeq; PromethION, Flongle for Nanopore). Aparatus in the fluidic subsystem where the sheath and sample meet.  Can be one of several types; jet-in-air, quartz cuvette, or a hybrid of the two.  The sample flows through the center of a fluid column of sheath fluid in the flow cell.</li>
-<li><a href="format/">format</a> - The format of the file: BAM, SAM, CRAM, BAI, etc.</li>
-<li><a href="gender/">gender</a> - Identification as male/masculine, female/feminine or something else,  and association with a (social) role or set of behavioral and cultural traits.<ul>
-<li><a href="individual_gender/">individual➞gender</a></li>
+<li><a href="flow_cell_type/">flow cell type</a> - Type of flow cell used (e.g. S4, S2 for NovaSeq; PromethION, Flongle for Nanopore). Aparatus in the fluidic subsystem where the sheath and sample meet. Can be one of several types; jet-in-air, quartz cuvette, or a hybrid of the two. The sample flows through the center of a fluid column of sheath fluid in the flow cell.</li>
+<li><a href="format/">format</a> - The format of the file: BAM, SAM, CRAM, BAI, etc.<ul>
+<li><a href="file_format/">file➞format</a></li>
 </ul>
 </li>
-<li><a href="geographical_region/">geographical region</a> - The geographical region where the Individual is located. Any demarcated area of the Earth; may be determined by both natural and human boundaries.<ul>
-<li><a href="individual_geographical_region/">individual➞geographical region</a></li>
-</ul>
-</li>
-<li><a href="given_name/">given name</a> - First name.<ul>
-<li><a href="individual_given_name/">individual➞given name</a></li>
-</ul>
-</li>
+<li><a href="geographical_region/">geographical region</a> - The geographical region where the Individual is located. Any demarcated area of the Earth; may be determined by both natural and human boundaries.</li>
+<li><a href="given_name/">given name</a> - First name.</li>
 <li><a href="has_agent/">has agent</a> - A person or an entity that is performing a Planned Process entity.<ul>
 <li><a href="analysis_process_has_agent/">analysis process➞has agent</a> - The Agent - a software, institution, or human - that is executing or responsible for executing the workflow.</li>
 <li><a href="experiment_process_has_agent/">experiment process➞has agent</a> - The Agent - a software, institution, or human - that is executing or responsible for executing the Experiment Process.</li>
@@ -640,6 +658,7 @@
 </li>
 <li><a href="has_anatomical_entity/">has anatomical entity</a> - Anatomical site associated with an entity.<ul>
 <li><a href="biospecimen_has_anatomical_entity/">biospecimen➞has anatomical entity</a> - The Anatomical entity, that represents the site, from which the Biospecimen was retrieved. Typically, a concept from Uber-anatomy Ontology (UBERON). For example, 'UBERON:0008307' indicates that the Biospecimen was extracted from the 'Heart Endothelium' of an Individual.</li>
+<li><a href="sample_has_anatomical_entity/">sample➞has anatomical entity</a></li>
 </ul>
 </li>
 <li><a href="has_attribute/">has attribute</a> - Key/value pairs corresponding to an entity.<ul>
@@ -649,7 +668,7 @@
 <li><a href="sequencing_protocol_has_attribute/">sequencing protocol➞has attribute</a> - One or more attributes that further characterizes this Sequencing Protocol.</li>
 </ul>
 </li>
-<li><a href="study_has_attribute/">study➞has attribute</a> - Custom key/value pairs that further characterizes the Study.  (e.g.: approaches - single-cell, bulk etc)</li>
+<li><a href="study_has_attribute/">study➞has attribute</a> - Custom key/value pairs that further characterizes the Study. (e.g.: approaches - single-cell, bulk etc)</li>
 </ul>
 </li>
 <li><a href="has_biospecimen/">has biospecimen</a> - The biospecimen associated with an entity.<ul>
@@ -745,6 +764,7 @@
 </li>
 <li><a href="has_protocol/">has protocol</a> - The protocol associated with an entity.<ul>
 <li><a href="experiment_process_has_protocol/">experiment process➞has protocol</a> - The Protocol entity used by this Experiment Process.</li>
+<li><a href="experiment_has_protocol/">experiment➞has protocol</a> - One or more Protocol entities associated with this Experiment.</li>
 </ul>
 </li>
 <li><a href="has_publication/">has publication</a> - The Publication associated with an entity.<ul>
@@ -767,10 +787,7 @@
 <li><a href="submission_has_study/">submission➞has study</a> - Information about a Study entities associated with this submission.</li>
 </ul>
 </li>
-<li><a href="has_technology/">has technology</a> - The technology associated with an entity.<ul>
-<li><a href="experiment_has_technology/">experiment➞has technology</a> - The Technology entity associated with this Experiment.</li>
-</ul>
-</li>
+<li><a href="has_technology/">has technology</a></li>
 <li><a href="has_workflow/">has workflow</a> - The Workflow entity associated wtih a Planned Process entity.<ul>
 <li><a href="analysis_has_workflow/">analysis➞has workflow</a> - The Workflow entity associated with this Analysis.</li>
 </ul>
@@ -788,11 +805,13 @@
 <li><a href="submission_id/">submission➞id</a> - A internal unique identifier for the Submission.</li>
 </ul>
 </li>
+<li><a href="index_sequence/">index sequence</a> - A unique nucleotide sequence that is added to a sample during library preparation to serve as a unique identifier for the sample.</li>
 <li><a href="instrument_model/">instrument model</a> - The name and model of the technology platform used to perform sequencing.<ul>
 <li><a href="sequencing_protocol_instrument_model/">sequencing protocol➞instrument model</a></li>
 </ul>
 </li>
 <li><a href="isolation/">isolation</a> - Method or device employed for collecting/isolating a biospecimen or a sample.</li>
+<li><a href="karyotype/">karyotype</a> - The karyotype of an individual if defined.</li>
 <li><a href="key/">key</a> - The key of an attribute.<ul>
 <li><a href="attribute_key/">attribute➞key</a> - The key for an attribute.</li>
 <li><a href="workflow_parameter_key/">workflow parameter➞key</a> - Key that represents the parameter name.</li>
@@ -802,37 +821,32 @@
 <li><a href="attribute_key_type/">attribute➞key type</a> - A semantic type that characterizes the attribute key. Usually this is a term from an ontology. For example, 'MAXO:0000616' indicates that the attribute is a measurement of oxygen saturation in the blood.</li>
 </ul>
 </li>
-<li><a href="lane_number/">lane number</a> - he numerical identifier for the lane or machine unit where a sample was located during nucleotide sequencing.</li>
-<li><a href="library_construction/">library construction</a> - The name of a library construction approach being used. (eg: '10X v2 sequencing' or 'Smart-seq2')<ul>
-<li><a href="library_preparation_protocol_library_construction/">library preparation protocol➞library construction</a></li>
-</ul>
-</li>
-<li><a href="library_construction_kit_manufacturer/">library construction kit manufacturer</a> - Manufacturer of library construction kit<ul>
-<li><a href="library_preparation_protocol_library_construction_kit_manufacturer/">library preparation protocol➞library construction kit manufacturer</a></li>
-</ul>
-</li>
-<li><a href="library_construction_kit_retail_name/">library construction kit retail name</a> - A unique identifier for the kit used to construct a genomic library.  This may include the vendor name, kit name and kit version  (e.g. Agilent sure select Human Exome V8, Twist RefSeq Exome, etc.)<ul>
-<li><a href="library_preparation_protocol_library_construction_kit_retail_name/">library preparation protocol➞library construction kit retail name</a></li>
-</ul>
-</li>
+<li><a href="lane_number/">lane number</a> - The numerical identifier for the lane or machine unit where a sample was located during nucleotide sequencing.</li>
 <li><a href="library_layout/">library layout</a> - Describe whether the library was sequenced in single-end (forward or reverse) or paired-end mode<ul>
 <li><a href="library_preparation_protocol_library_layout/">library preparation protocol➞library layout</a></li>
 </ul>
 </li>
-<li><a href="library_level/">library level</a> - Single Cell Sequencing or Bulk Sequencing</li>
-<li><a href="library_name/">library name</a> - A short name identifying the library to potential users.  The same name may refer to multiple versions of the same continually updated library.<ul>
+<li><a href="library_name/">library name</a> - A short name identifying the library to potential users. The same name may refer to multiple versions of the same continually updated library.<ul>
 <li><a href="library_preparation_protocol_library_name/">library preparation protocol➞library name</a></li>
 </ul>
 </li>
-<li><a href="library_preparation/">library preparation</a> - The general method for sequencing library construction (e.g. KAPA PCR-free).<ul>
+<li><a href="library_preparation/">library preparation</a> - The general method for sequencing library preparation (e.g. KAPA PCR-free).<ul>
 <li><a href="library_preparation_protocol_library_preparation/">library preparation protocol➞library preparation</a></li>
+</ul>
+</li>
+<li><a href="library_preparation_kit_manufacturer/">library preparation kit manufacturer</a> - Manufacturer of library preparation kit<ul>
+<li><a href="library_preparation_protocol_library_preparation_kit_manufacturer/">library preparation protocol➞library preparation kit manufacturer</a></li>
+</ul>
+</li>
+<li><a href="library_preparation_kit_retail_name/">library preparation kit retail name</a> - A unique identifier for the kit used to construct a genomic library. This may include the vendor name, kit name and kit version  (e.g. Agilent sure select Human Exome V8, Twist RefSeq Exome, etc.)<ul>
+<li><a href="library_preparation_protocol_library_preparation_kit_retail_name/">library preparation protocol➞library preparation kit retail name</a></li>
 </ul>
 </li>
 <li><a href="library_selection/">library selection</a> - Whether any method was used to select for or against, enrich, or screen the material being sequenced. Library Selection method (e.g. random, PCA, cDNA, etc )<ul>
 <li><a href="library_preparation_protocol_library_selection/">library preparation protocol➞library selection</a></li>
 </ul>
 </li>
-<li><a href="library_type/">library type</a> - Describe the level of omics analysis (eg: Metagenome, transcriptome, etc) <ul>
+<li><a href="library_type/">library type</a> - Describe the level of omics analysis (eg: Metagenome, transcriptome, etc)<ul>
 <li><a href="library_preparation_protocol_library_type/">library preparation protocol➞library type</a></li>
 </ul>
 </li>
@@ -845,14 +859,11 @@
 </ul>
 </li>
 <li><a href="name/">name</a> - The name for an entity.<ul>
-<li><a href="data_access_committee_name/">data access committee➞name</a></li>
-<li><a href="file_name/">file➞name</a></li>
+<li><a href="data_access_committee_name/">data access committee➞name</a> - The name for the Data Access Committee.</li>
+<li><a href="data_access_policy_name/">data access policy➞name</a> - A name for the Data Access Policy.</li>
+<li><a href="file_name/">file➞name</a> - The given filename.</li>
 <li><a href="ontology_class_mixin_name/">ontology class mixin➞name</a> - The name or label (rdfs:label) of an ontology class.</li>
-<li><a href="protocol_name/">protocol➞name</a> - Name of the protocol (eg: Sample extraction_PCR amplification).<ul>
-<li><a href="library_preparation_protocol_name/">library preparation protocol➞name</a> - Name of the library preparation protocol (eg: mRNA-seq library preparation).</li>
-<li><a href="sequencing_protocol_name/">sequencing protocol➞name</a> - Name of the library preparation protocol (eg: mRNA-seq,Whole exome long-read sequencing etc).</li>
-</ul>
-</li>
+<li><a href="protocol_name/">protocol➞name</a> - Name of the protocol (eg: Sample extraction_PCR amplification).</li>
 <li><a href="sample_name/">sample➞name</a> - Name of the sample (eg:GHGAS_Blood_Sample1 or GHGAS_PBMC_RNAseq_S1).</li>
 </ul>
 </li>
@@ -860,6 +871,7 @@
 <li><a href="member_organization/">member➞organization</a> - The organization that the Member is part of.</li>
 </ul>
 </li>
+<li><a href="paired_or_single_end/">paired or single end</a> - Denotes whether a submitted FASTQ file contains forward (R1) or reverse (R2) reads for paired-end sequencing. The number that identifies each read direction in a paired-end nucleotide sequencing replications.</li>
 <li><a href="permission/">permission</a> - Data use permission.<ul>
 <li><a href="data_use_condition_permission/">data use condition➞permission</a> - Data use permission. Typically one or more terms from DUO. Preferably descendants of 'DUO:0000001 data use permission'.</li>
 </ul>
@@ -873,63 +885,74 @@
 </ul>
 </li>
 <li><a href="primer/">primer</a> - The type of primer used for reverse transcription, e.g. 'oligo-dT' or 'random' primer. This allows users to identify content of the cDNA library input e.g. enriched for mRNA.</li>
-<li><a href="read_length/">read length</a> - Length of sequencing reads (eg: Long or short or actual number of the read length etc). The number of nucleotides successfully ordered from each side of a nucleic acid fragment  obtained after the completion of a sequencing process</li>
-<li><a href="read_pair_number/">read pair number</a> - Denotes whether a submitted FASTQ file contains forward (R1) or reverse (R2) reads for paired-end sequencing. The number that identifies each read direction in a paired-end nucleotide sequencing replications.</li>
-<li><a href="reference_annotation/">reference annotation</a> - A published genetic sequence that is used as a reference sequence against which other sequences are compared. Reference genome(s) or annotation(s) used for prior analyses (eg: GRCh38.p13).</li>
+<li><a href="reference_chromosome/">reference chromosome</a> - The reference chromosome used for this Analysis.<ul>
+<li><a href="analysis_reference_chromosome/">analysis➞reference chromosome</a></li>
+</ul>
+</li>
+<li><a href="reference_genome/">reference genome</a> - A published genetic sequence that is used as a reference sequence against which other sequences are compared. Reference genome(s) or annotation(s) used for prior analyses (eg: GRCh38.p13).<ul>
+<li><a href="analysis_reference_genome/">analysis➞reference genome</a></li>
+</ul>
+</li>
 <li><a href="release_date/">release date</a> - The timestamp (in ISO 8601 format) when the entity was released for public consumption.</li>
+<li><a href="release_status/">release status</a> - The release status of an entity.<ul>
+<li><a href="dataset_release_status/">dataset➞release status</a> - The release status of a Dataset.</li>
+<li><a href="study_release_status/">study➞release status</a> - The release status of a Study.</li>
+</ul>
+</li>
 <li><a href="replaced_by/">replaced by</a> - Refers to the entity which replaces a currently deprecated entity.</li>
 <li><a href="replaces/">replaces</a> - Refers to a deprecated entity that is being replaced by the current entity.</li>
-<li><a href="rnaseq_strandedness/">rnaseq strandedness</a> - The strandedness of the library, whether reads come from both strands of the cDNA  or only from the first (antisense) or the second (sense) strand.</li>
+<li><a href="rnaseq_strandedness/">rnaseq strandedness</a> - The strandedness of the library, whether reads come from both strands of the cDNA or only from the first (antisense) or the second (sense) strand.</li>
 <li><a href="role/">role</a> - The role that a user has within GHGA.<ul>
 <li><a href="user_role/">user➞role</a> - The role of the user</li>
 </ul>
 </li>
 <li><a href="sample_barcode_read/">sample barcode read</a> - The type of read that contains the sample barcode (eg: index1/index2/read1/read2).</li>
-<li><a href="sequencing_center/">sequencing center</a> - Center where sample was sequenced.<ul>
-<li><a href="sequencing_protocol_sequencing_center/">sequencing protocol➞sequencing center</a></li>
-</ul>
-</li>
-<li><a href="sequencing_length/">sequencing length</a> - Long or Short Read.</li>
-<li><a href="sex/">sex</a> - The assemblage of physical properties or qualities by which male is distinguished from female;  the physical difference between male and female; the distinguishing peculiarity of male or female.<ul>
+<li><a href="schema_type/">schema type</a> - The schema type an instance corresponds to.</li>
+<li><a href="schema_version/">schema version</a> - The version of the schema an instance corresponds to.</li>
+<li><a href="sequencing_center/">sequencing center</a> - Center where sample was sequenced.</li>
+<li><a href="sequencing_read_length/">sequencing read length</a> - Length of sequencing reads (eg: Long or short or actual number of the read length etc). The number of nucleotides successfully ordered from each side of a nucleic acid fragment obtained after the completion of a sequencing process</li>
+<li><a href="sex/">sex</a> - The assemblage of physical properties or qualities by which male is distinguished from female; the physical difference between male and female; the distinguishing peculiarity of male or female.<ul>
 <li><a href="individual_sex/">individual➞sex</a></li>
 </ul>
 </li>
 <li><a href="size/">size</a> - The size of a file in bytes.</li>
-<li><a href="status/">status</a> - The status of an entity.<ul>
-<li><a href="study_status/">study➞status</a> - The status of a Study. For example, 'released' or 'unreleased'.</li>
-<li><a href="submission_status/">submission➞status</a> - The status of a Submission. For example, 'in progress' or 'submitted'.</li>
-</ul>
-</li>
 <li><a href="storage/">storage</a> - Methods by which a biospecimen or a sample is stored (e.g. frozen in liquid nitrogen).</li>
 <li><a href="submission_date/">submission date</a> - The timestamp (in ISO 8601 format) when submission was marked completed.</li>
-<li><a href="target_coverage/">target coverage</a> - Mean coverage for whole genome sequencing, or mean target coverage for whole exome and targeted sequencing. The number of times a particular locus (site, nucleotide, amplicon, region) was sequenced.</li>
-<li><a href="target_regions/">target regions</a> - Subset of genes or specific regions of the genome, which are most likely to be involved in the phenotype under study. </li>
-<li><a href="technical_replicates/">technical replicates</a> - Number of replicate samples (technical replicates).<ul>
-<li><a href="experiment_technical_replicates/">experiment➞technical replicates</a> - A technical replicate is a replicate role where the same BioSample is use e.g.  the same pool of RNA used to assess technical (as opposed to biological)  variation within an experiment.</li>
+<li><a href="submission_status/">submission status</a> - The status of a submission.<ul>
+<li><a href="submission_submission_status/">submission➞submission status</a> - The status of a Submission.</li>
 </ul>
 </li>
+<li><a href="target_coverage/">target coverage</a> - Mean coverage for whole genome sequencing, or mean target coverage for whole exome and targeted sequencing. The number of times a particular locus (site, nucleotide, amplicon, region) was sequenced.</li>
+<li><a href="target_regions/">target regions</a> - Subset of genes or specific regions of the genome, which are most likely to be involved in the phenotype under study.<ul>
+<li><a href="library_preparation_protocol_target_regions/">library preparation protocol➞target regions</a></li>
+</ul>
+</li>
+<li><a href="technical_replicates/">technical replicates</a> - A technical replicate is a replicate role where the same BioSample is use e.g. the same pool of RNA used to assess technical (as opposed to biological) variation within an experiment.</li>
 <li><a href="telephone/">telephone</a> - The telephone number associated with a person.<ul>
 <li><a href="member_telephone/">member➞telephone</a> - The telephone number of the Member.</li>
 </ul>
 </li>
-<li><a href="tissue/">tissue</a> - An anatomical structure consisting of similarly specialized cells and intercellular matrix,  aggregated according to genetically determined spatial relationships, performing a specific function.<ul>
+<li><a href="tissue/">tissue</a> - An anatomical structure consisting of similarly specialized cells and intercellular matrix, aggregated according to genetically determined spatial relationships, performing a specific function.<ul>
 <li><a href="sample_tissue/">sample➞tissue</a></li>
 </ul>
 </li>
 <li><a href="title/">title</a> - The title that describes an entity.<ul>
-<li><a href="dataset_title/">dataset➞title</a></li>
-<li><a href="experiment_process_title/">experiment process➞title</a> - A descriptive title that explains the step(s) involved in performing the experiment leading up to the sequencing of the sample and generation of raw data from the instrument. (eg: Sample extraction -&gt; Target Enrichment) </li>
+<li><a href="dataset_title/">dataset➞title</a> - A title for the submitted Dataset.</li>
+<li><a href="experiment_process_title/">experiment process➞title</a> - A descriptive title that explains the step(s) involved in performing the experiment leading up to the sequencing of the sample and generation of raw data from the instrument. (eg: Sample extraction -&gt; Target Enrichment)</li>
 <li><a href="experiment_title/">experiment➞title</a> - Name for the experiment (eg: GHGAE_PBMC_RNAseq).</li>
 <li><a href="project_title/">project➞title</a> - Comprehensive title for the project.</li>
 <li><a href="publication_title/">publication➞title</a> - The title for the Publication.</li>
-<li><a href="study_title/">study➞title</a> - Comprehensive title for the study.</li>
+<li><a href="study_title/">study➞title</a> - A comprehensive title for the study.</li>
 </ul>
 </li>
 <li><a href="type/">type</a> - The type of an entity.<ul>
 <li><a href="named_thing_type/">named thing➞type</a><ul>
+<li><a href="analysis_type/">analysis➞type</a> - The type of the Analysis. Either Reference Alignment (BAM) or Sequence Variation (VCF)</li>
 <li><a href="dataset_type/">dataset➞type</a></li>
-<li><a href="file_type/">file➞type</a> - The file type: Aligned Reads, Unaligned Reads, etc.</li>
-<li><a href="protocol_type/">protocol➞type</a> - Type of the protocol (eg: Target enrichment).</li>
+<li><a href="protocol_type/">protocol➞type</a> - Type of the protocol (eg: Target enrichment).<ul>
+<li><a href="sequencing_protocol_type/">sequencing protocol➞type</a> - Name of the library preparation protocol (eg: mRNA-seq,Whole exome long-read sequencing etc).</li>
+</ul>
+</li>
 <li><a href="sample_type/">sample➞type</a> - Type of sample: 'Case' or 'Control'.</li>
 <li><a href="study_type/">study➞type</a> - The type of Study. For example, 'Cancer Genomics', 'Epigenetics', 'Exome Sequencing'.</li>
 </ul>
@@ -957,7 +980,7 @@
 <li><a href="attribute_value_type/">attribute➞value type</a> - The value type that characterizes the attribute value. Usually this is a term from an ontology that describes how to interpret the value. For example, 'SIO:001413' indicates that the value is to be interpreted as a percentage.</li>
 </ul>
 </li>
-<li><a href="vital_status/">vital status</a> - The state or condition of being living or deceased;  also includes the case where the vital status is unknown.<ul>
+<li><a href="vital_status/">vital status</a> - The state or condition of being living or deceased; also includes the case where the vital status is unknown.<ul>
 <li><a href="individual_vital_status/">individual➞vital status</a> - Last known Vital Status of an Individual.</li>
 </ul>
 </li>
@@ -971,23 +994,24 @@
 </li>
 </ul>
 </li>
-<li><a href="year_of_birth/">year of birth</a> - The year in which the individual was born.<ul>
-<li><a href="individual_year_of_birth/">individual➞year of birth</a></li>
-</ul>
-</li>
 </ul>
 <h3 id="enums">Enums<a class="headerlink" href="#enums" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="biological_sex_enum/">biological_sex_enum</a> - The biological sex of an Individual as determined by their chromosomes.</li>
 <li><a href="case_control_enum/">case_control_enum</a> - Enum to capture whether a Sample is to be considered as Case or Control.</li>
-<li><a href="file_type_enum/">file_type_enum</a> - Enum to capture file types.</li>
-<li><a href="status_enum/">status_enum</a> - Enum to capture the status of an entity.</li>
+<li><a href="file_format_enum/">file_format_enum</a> - Enum to capture file types.</li>
+<li><a href="release_status_enum/">release_status_enum</a> - Enum to capture the release status of an entity.</li>
 <li><a href="study_type_enum/">study_type_enum</a> - Enum to capture the type of a study.</li>
+<li><a href="submission_status_enum/">submission_status_enum</a> - Enum to capture the status of a Submission.</li>
 <li><a href="user_role_enum/">user_role_enum</a> - Enum to capture the different roles a GHGA User can have.</li>
 <li><a href="vital_status_enum/">vital_status_enum</a> - Enum to capture the vital status of an individual.</li>
 </ul>
 <h3 id="subsets">Subsets<a class="headerlink" href="#subsets" title="Permanent link">&para;</a></h3>
 <ul>
+<li><a href="Essential/">Essential</a> - Subset of properties that are considered to be essential for the funtionality of GHGA.</li>
+<li><a href="Optional/">Optional</a> - Subset of properties that are considered to be optional.</li>
+<li><a href="Public/">Public</a> - Subset of properties that are considered to be public. </li>
+<li><a href="Recommended/">Recommended</a> - Subset of properties that are considered to be required for FAIR data sharing.</li>
 <li><a href="Restricted/">Restricted</a> - Subset of properties that are considered to be restricted.</li>
 </ul>
 <h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
@@ -1058,13 +1082,13 @@
       
       
         
-        <a href="../contributing/" class="md-footer__link md-footer__link--next" aria-label="Next: Contributing" rel="next">
+        <a href="../derived-schemas/" class="md-footer__link md-footer__link--next" aria-label="Next: Derived Schemas" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Contributing
+              Derived Schemas
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1094,10 +1118,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "search": "../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
+      <script src="../assets/javascripts/bundle.c44cc438.min.js"></script>
       
     
   </body>
