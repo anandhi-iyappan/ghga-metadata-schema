@@ -1087,6 +1087,11 @@ classes:
         required: true
         inlined: true
         inlined_as_list: true
+      type:
+        description: >-
+          The type of a Dataset
+        required: true
+        multivalued: true
       has experiment:
         description: >-
           One or more Experiment entities that are referenced by this Dataset.
